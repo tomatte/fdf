@@ -1,0 +1,2 @@
+TO COMPILE USING MLX:
+gcc main.c ./minilibx-linux/libmlx_Linux.a -L. -lXext -L. -lX11
