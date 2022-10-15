@@ -1,2 +1,2 @@
-TO COMPILE USING MLX:
+#!/bin/bash
 gcc main.c ./minilibx-linux/libmlx_Linux.a -L. -lXext -L. -lX11
