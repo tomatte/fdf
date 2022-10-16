@@ -2,7 +2,7 @@ SRC			=	./fdf.c
 
 H_SRC		=	fdf.h ./libft/libftprintf.h
 
-NAME		=	fdf.out
+NAME		=	fdf
 
 LIBFT		=	./libft/libftprintf.a
 
