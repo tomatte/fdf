@@ -1,4 +1,4 @@
-SRC			=	./fdf.c
+SRC			=	fdf.c line.c
 
 H_SRC		=	fdf.h ./libft/libftprintf.h
 
@@ -6,7 +6,7 @@ NAME		=	fdf
 
 LIBFT		=	./libft/libftprintf.a
 
-FLAGS		=	-Wall -Wextra -Werror ./minilibx-linux/libmlx_Linux.a -L. -lXext -L. -lX11
+FLAGS		=	./minilibx-linux/libmlx_Linux.a -L. -lXext -L. -lX11
 
 all: $(NAME)
 
