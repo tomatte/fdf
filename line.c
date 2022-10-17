@@ -28,19 +28,41 @@ void	line(t_data *img, int x1, int y1, int x2, int y2)
 	}
 	ft_printf("r: %d\nless: %d\n", r, less);
 	my_mlx_pixel_put(img, x1++, y1, 0x00FF0000);
-	while (less-- > 0)
+	//case x greater
+	if (ft_abs(x2 - x1) > ft_abs(y2 - y1))
 	{
-		if ((y2 - y1) > 0)
-			my_mlx_pixel_put(img, x1, y1++, 0x00FF0000);
-		else
-			my_mlx_pixel_put(img, x1, y1--, 0x00FF0000);
-		i = r;
-		while (i-- > 0)
+		while (less-- > 0)
 		{
-			if ((x2 - x1) > 0)
+			if (y2 > y1)
+				my_mlx_pixel_put(img, x1, y1++, 0x00FF0000);
+			else
+				my_mlx_pixel_put(img, x1, y1--, 0x00FF0000);
+			i = r;
+			while (i-- > 0)
+			{
+				if (x2 > x1)
+					my_mlx_pixel_put(img, x1++, y1, 0x00FF0000);
+				else
+					my_mlx_pixel_put(img, x1--, y1, 0x00FF0000);
+			}
+		}
+	}
+	else
+	{
+		while (less-- > 0)
+		{
+			if (x2 > x1)
 				my_mlx_pixel_put(img, x1++, y1, 0x00FF0000);
 			else
 				my_mlx_pixel_put(img, x1--, y1, 0x00FF0000);
+			i = r;
+			while (i-- > 0)
+			{
+				if (y2 > y1)
+					my_mlx_pixel_put(img, x1, y1++, 0x00FF0000);
+				else
+					my_mlx_pixel_put(img, x1, y1--, 0x00FF0000);
+			}
 		}
 	}
 }
