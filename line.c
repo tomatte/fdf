@@ -41,27 +41,27 @@ void	asign_values2(t_line *line_data)
     }
 }
 
-void    line(t_data *img, t_line *line_data)
+void    line(t_data *img, t_line line_data)
 {
 	int	i;
 
-	asign_values1(line_data);
-	asign_values2(line_data);
+	asign_values1(&line_data);
+	asign_values2(&line_data);
     i = 0;
-    while (i++ <= line_data->longest)
+    while (i++ <= line_data.longest)
     {
-        my_mlx_pixel_put(img, line_data->x, line_data->y, 0x00FF0000) ;
-        line_data->numerator += line_data->shortest ;
-        if (line_data->numerator >= line_data->longest)
+        my_mlx_pixel_put(img, line_data.x, line_data.y, 0x00FF0000) ;
+        line_data.numerator += line_data.shortest ;
+        if (line_data.numerator >= line_data.longest)
         {
-            line_data->numerator -= line_data->longest ;
-            line_data->x += line_data->dx1 ;
-            line_data->y += line_data->dy1 ;
+            line_data.numerator -= line_data.longest ;
+            line_data.x += line_data.dx1 ;
+            line_data.y += line_data.dy1 ;
         }
         else
         {
-            line_data->x += line_data->dx2 ;
-            line_data->y += line_data->dy2 ;
+            line_data.x += line_data.dx2 ;
+            line_data.y += line_data.dy2 ;
         }
     }
 }
