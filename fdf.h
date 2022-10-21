@@ -35,6 +35,6 @@
     }               t_line;
 
     void	my_mlx_pixel_put(t_data *img, int x, int y, int color);
-    void    line(t_data *img, t_line *line_data);
+    void    line(t_data *img, t_line line_data);
 
 #endif
