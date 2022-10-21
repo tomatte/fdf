@@ -15,7 +15,7 @@ void	init_fill(t_data *img, int width, int height, char title[])
 	img->window = mlx_new_window(img->mlx, width, height, title);
 }
 
-void	draw_line(t_data *img, int x, int y, int x2, int y2)
+t_line	get_line_data(int x, int y, int x2, int y2)
 {
 	t_line	line_data;
 
@@ -23,53 +23,31 @@ void	draw_line(t_data *img, int x, int y, int x2, int y2)
 	line_data.y = y;
 	line_data.x2 = x2;
 	line_data.y2 = y2;
-	line(img, &line_data);
+	return (line_data);
 }
 
-int main(void)
+int	is_text(char *file_name)
+{
+	char *file_type;
+
+	file_type = ft_strnstr(file_name, ".txt", ft_strlen(file_name));
+	if (!file_type)
+		return (0);
+	else if (file_type[4])
+		return (0);
+	return (1);
+}
+
+int main(int argc, char **argv)
 {
 	t_data	img;
 
-	ft_printf("Lib working!\n");
+	if (argc < 2)
+		return (-1);
+	else if (!is_text(argv[1]))
+		return (-1);
+	
 	init_fill(&img, 1080, 720, "Land");
 	new_img(img.mlx, &img);
-/* 	draw_line(&img, 1080, 0, 0, 720);
-	draw_line(&img, 0, 0, 1080, 720);
-	draw_line(&img, 1080/2, 0, 1080/2, 720);
-	draw_line(&img, 0, 360, 1080, 360); */
-
-/* 	//-----------------start----------------
-	draw_line(&img, 1080/2, 720/2, 1, 1);
-	draw_line(&img, 1080/2, 720/2, 1080/2, 1);
-	draw_line(&img, 1080/2, 720/2, 1, 720);
-	draw_line(&img, 1080/2, 720/2, 1, 720);
-	draw_line(&img, 1080/2, 720/2, 1080, 720);
-	draw_line(&img, 1080/2, 720/2, 1080, 1);
-	draw_line(&img, 1080/2, 720/2, 1080/4*3, 1);
-	draw_line(&img, 1080/2, 720/2, 1080/4, 1);
-
-	//left triangle
-	draw_line(&img, 1080/2 - 200, 720/2, 1080/2 - 200 - 100, 720/2 - 70);
-	draw_line(&img, 1080/2 - 200, 720/2, 1080/2 - 200 - 100, 720/2 + 70);
-	draw_line(&img, 1080/2 - 300, 720/2 + 70, 1080/2 - 300, 720/2 - 70);
-
-	//right triangle
-	draw_line(&img, 1080/2 + 200, 720/2, 1080/2 + 300, 720/2 + 70);
-	draw_line(&img, 1080/2 + 200, 720/2, 1080/2 + 300, 720/2 - 70);
-	draw_line(&img, 1080/2 + 300, 720/2 - 70, 1080/2 + 300, 720/2 + 70);
-
-	draw_line(&img, 1080/2 - 100, 720/2 + 200, 1080/2 + 100, 720/2 + 200);
-	//-----------------end---------------- */
-
-/* 	draw_line(&img, 540, 0, 540, 360);
-	draw_line(&img, 0, 0, 540, 360);
-	draw_line(&img, 540, 360, 1080, 0); */
-	//draw_line(&img, 540, 0, 540, 360);
-
-/* 	draw_line(&img, 0, 0, 50, 15);
-	draw_line(&img, 0, 0, 50, 15); */
-
-	mlx_put_image_to_window(img.mlx, img.window, img.img, 0, 0);
-	mlx_loop(img.mlx);
     return (0);
 }
