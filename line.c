@@ -1,78 +1,67 @@
 #include "fdf.h"
 
-/* typedef struct  t_line
+void	asign_values1(t_line *line_data)
 {
-    int w;
-    int h;
-    int dx1;
-    int dy1;
-    int dx2;
-    int dy2;
-    int longest;
-    int shortest;
-}               s_line; */
+	line_data->w = line_data->x2 - line_data->x ;
+    line_data->h = line_data->y2 - line_data->y ;
+    line_data->dx1 = 0;
+    line_data->dy1 = 0; 
+    line_data->dx2 = 0; 
+    line_data->dy2 = 0;
+	line_data->numerator = 0;
+    line_data->longest = ft_abs(line_data->w);
+    line_data->shortest = ft_abs(line_data->h);
+}
 
-void    line(t_data *img, int x,int y,int x2, int y2)
+void	asign_values2(t_line *line_data)
 {
-    int w;
-    int h;
-    int dx1;
-    int dy1;
-    int dx2;
-    int dy2;
-    int longest;
-    int shortest;
-    int numerator;
-    int i;
+    if (line_data->w < 0)
+    {
+        line_data->dx1 = -1;
+        line_data->dx2 = -1 ;    
+    }
+    else if (line_data->w > 0)
+    {
+        line_data->dx1 = 1;
+        line_data->dx2 = 1;
+    }
+    if (line_data->h < 0)
+        line_data->dy1 = -1;
+    else if (line_data->h > 0)
+        line_data->dy1 = 1;
+    if (line_data->longest <= line_data->shortest)
+    {
+        line_data->longest = ft_abs(line_data->h) ;
+        line_data->shortest = ft_abs(line_data->w) ;
+        if (line_data->h < 0)
+            line_data->dy2 = -1;
+        else if (line_data->h > 0)
+            line_data->dy2 = 1;
+        line_data->dx2 = 0;           
+    }
+}
 
-    w = x2 - x ;
-    h = y2 - y ;
-    dx1 = 0;
-    dy1 = 0; 
-    dx2 = 0; 
-    dy2 = 0;
-    if (w < 0)
-    {
-        dx1 = -1;
-        dx2 = -1 ;    
-    }
-    else if (w > 0)
-    {
-        dx1 = 1;
-        dx2 = 1;
-    }
-    if (h < 0)
-        dy1 = -1;
-    else if (h > 0)
-        dy1 = 1;
-    longest = ft_abs(w);
-    shortest = ft_abs(h);
-    if (longest <= shortest)
-    {
-        longest = ft_abs(h) ;
-        shortest = ft_abs(w) ;
-        if (h < 0)
-            dy2 = -1;
-        else if (h > 0)
-            dy2 = 1;
-        dx2 = 0;           
-    }
-    numerator = 0;
+void    line(t_data *img, t_line *line_data)
+{
+	int	i;
+
+	asign_values1(line_data);
+	asign_values2(line_data);
     i = 0;
-    while (i++ <= longest)
+    while (i++ <= line_data->longest)
     {
-        my_mlx_pixel_put(img, x, y, 0x00FF0000) ;
-        numerator += shortest ;
-        if (numerator >= longest)
+        my_mlx_pixel_put(img, line_data->x, line_data->y, 0x00FF0000) ;
+        line_data->numerator += line_data->shortest ;
+        if (line_data->numerator >= line_data->longest)
         {
-            numerator -= longest ;
-            x += dx1 ;
-            y += dy1 ;
+            line_data->numerator -= line_data->longest ;
+            line_data->x += line_data->dx1 ;
+            line_data->y += line_data->dy1 ;
         }
         else
         {
-            x += dx2 ;
-            y += dy2 ;
+            line_data->x += line_data->dx2 ;
+            line_data->y += line_data->dy2 ;
         }
     }
 }
