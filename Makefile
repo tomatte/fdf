@@ -1,4 +1,4 @@
-SRC			=	fdf.c my_mlx_pixel_put.c bresenham.c
+SRC			=	fdf.c my_mlx_pixel_put.c line.c
 
 H_SRC		=	fdf.h ./libft/libftprintf.h
 

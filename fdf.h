@@ -19,6 +19,6 @@
 
     void	my_mlx_pixel_put(t_data *img, int x, int y, int color);
     void	line(t_data *img, int x1, int y1, int x2, int y2);
-    void    bresenham(t_data *img, int x,int y,int x2, int y2);
+    void    line(t_data *img, int x,int y,int x2, int y2);
 
 #endif

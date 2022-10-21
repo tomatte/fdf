@@ -12,7 +12,7 @@
     int shortest;
 }               s_line; */
 
-void    bresenham(t_data *img, int x,int y,int x2, int y2)
+void    line(t_data *img, int x,int y,int x2, int y2)
 {
     int w;
     int h;
