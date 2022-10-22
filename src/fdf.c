@@ -35,7 +35,7 @@ int	is_text(char *file_name)
 	return (!file_type[4]);
 }
 
-int	verify_argv(int argc, char **argv)
+int	verify_inputs(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
