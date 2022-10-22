@@ -2,7 +2,7 @@
 # define FDF_H
 
     #include <mlx.h>
-    #include "./libft/libftprintf.h"
+    #include "../libft/libftprintf.h"
 
     typedef struct  s_data
     {
@@ -31,10 +31,11 @@
         int dy2;
         int longest;
         int shortest;
-        int numerator;
+        int proportion;
     }               t_line;
 
     void	my_mlx_pixel_put(t_data *img, int x, int y, int color);
     void    draw_line(t_data *img, t_line line_data);
+    void    asign_values(t_line *line_data);
 
 #endif

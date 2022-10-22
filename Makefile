@@ -1,6 +1,7 @@
-SRC			=	my_mlx_pixel_put.c draw_line.c test.c
+SRC			=	./src/fdf.c ./src/my_mlx_pixel_put.c ./src/line/draw_line.c \
+				./src/line/asign_values.c
 
-H_SRC		=	fdf.h ./libft/libftprintf.h
+H_SRC		=	./src/fdf.h ./libft/libftprintf.h
 
 NAME		=	fdf
 

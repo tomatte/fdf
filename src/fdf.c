@@ -1,5 +1,4 @@
 #include "fdf.h"
-#include "./libft/libftprintf.h"
 
 void	new_img(void *mlx, t_data *img)
 {
@@ -49,5 +48,6 @@ int main(int argc, char **argv)
 	
 	init_fill(&img, 1080, 720, "Land");
 	new_img(img.mlx, &img);
+	ft_printf("end\n");
     return (0);
 }
