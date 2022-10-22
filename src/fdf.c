@@ -32,20 +32,22 @@ int	is_text(char *file_name)
 	file_type = ft_strnstr(file_name, ".txt", ft_strlen(file_name));
 	if (!file_type)
 		return (0);
-	else if (file_type[4])
+	return (!file_type[4]);
+}
+
+int	verify_argv(int argc, char **argv)
+{
+	if (argc < 2)
 		return (0);
-	return (1);
+	return (is_text(argv[1]));
 }
 
 int main(int argc, char **argv)
 {
 	t_data	img;
 
-	if (argc < 2)
+	if (!verify_inputs(argc, argv))
 		return (-1);
-	else if (!is_text(argv[1]))
-		return (-1);
-	
 	init_fill(&img, 1080, 720, "Land");
 	new_img(img.mlx, &img);
 	ft_printf("end\n");
