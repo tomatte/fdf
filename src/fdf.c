@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 
 	if (!verify_inputs(argc, argv))
 		return (-1);
-	init_fill(&img, 1080, 720, "Land");
+	fill_img_data(&img, 1080, 720, "Land");
 	new_img(img.mlx, &img);
 	draw_table(&img, argv[1]);
 	ft_printf("end\n");

@@ -42,4 +42,9 @@
     void    asign_values(t_line *line_data);
     t_line	line_coordinates(int x, int y, int x2, int y2);
 
+    // --- DRAW_TABLE --- //
+    int *get_next_coordinates(int fd);
+    int	draw_map_line(t_data *img, int fd, int l_index);
+    
+
 #endif
