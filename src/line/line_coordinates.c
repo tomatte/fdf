@@ -1,4 +1,4 @@
-#include "../fdf.c"
+#include "../fdf.h"
 
 t_line	line_coordinates(int x, int y, int x2, int y2)
 {

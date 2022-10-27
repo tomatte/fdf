@@ -21,7 +21,7 @@ void    draw_map(t_data *img, char *file_name)
     l_index = 0;
     while (draw_map_line(img, fd, l_index))
     {
-        draw_map_column(img, fd, l_index);
+        //draw_map_column(img, fd, l_index);
         l_index++;
     }
 

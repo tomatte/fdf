@@ -1,27 +1,28 @@
 #include "../fdf.h"
 
-static t_line	get_line_data(int l_index, int c)
+static t_line	get_line_data(int l_index, int column)
 {
 	t_line	line_data;
-	int		s;
+	int		space;
 
-	s = 20;
-	line_data.x = c * s;
-	line_data.y = l_index * s;
-	line_data.x2 = (c + 1) * s;
-	line_data.y2 = (l_index + 1) * s;
+	space = 20;
+	line_data.x = column * space;
+	line_data.y = l_index * space;
+	line_data.x2 = (column + 1) * space;
+	line_data.y2 = l_index * space;
 	return (line_data);
 }
 
-static void	put_pixel(img, int l_index, int c)
+static void	put_pixel(t_data *img, int l_index, int column)
 {
 	int	x;
 	int	y;
-	int	s;
+	int	space;
 
-	x = c * s;
-	y = l_index * s;
-	my_mlx_pixel_put(img, x, y, RED);
+	space = 20;
+	x = column * space;
+	y = l_index * space;
+	my_mlx_pixel_put(img, x, y, 0x00FF0000);
 }
 
 static void	put_lines(t_data *img, int *coordinates, int l_index)
@@ -31,7 +32,7 @@ static void	put_lines(t_data *img, int *coordinates, int l_index)
 
 	s = 20;
 	c = 0;
-    while (++c < coordinates[0])
+    while (++c < coordinates[0] - 1)
 	{
 		if (coordinates[c] && coordinates[c + 1])
 			draw_line(img, get_line_data(l_index, c));
