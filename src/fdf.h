@@ -5,6 +5,8 @@
     #include "../libft/libftprintf.h"
     #include <fcntl.h>
 
+    # define RED 0x00FF0000
+
     typedef struct  s_data
     {
         void    *mlx;
