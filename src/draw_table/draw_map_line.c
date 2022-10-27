@@ -26,11 +26,7 @@ int    draw_map_line(t_data *img, int fd, int l_index)
     int     *coordinates;
     int     c_index;
 
-    coordinates = get_coordinates(fd);
+    coordinates = get_next_coordinates(fd);
     c_index = 0;
-    while (++c_index < coordinates[0])
-    {
-        put_line(img, get_x(l_index, c_index), get_y(l_index, c_index));
-        put_pixel(img, get_x(l_index, c_index), get_y(l_index, c_index));
-    }
+    put_lines(img, coordinates, l_index);
 }

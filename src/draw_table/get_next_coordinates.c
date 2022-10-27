@@ -1,6 +1,6 @@
 #include "../fdf.h"
 
-int find_number(char **str)
+static int find_number(char **str)
 {
     int num;
 
@@ -16,7 +16,7 @@ int find_number(char **str)
     return (-1);
 }
 
-int get_line_size(char *map_line)
+static int get_line_size(char *map_line)
 {
     int i;
 
@@ -28,7 +28,7 @@ int get_line_size(char *map_line)
     return (i);
 }
 
-int	*get_coordinates_array(int line_size)
+static int	*get_coordinates_array(int line_size)
 {
 	int	*coordinates;
 	int	i;
@@ -42,7 +42,7 @@ int	*get_coordinates_array(int line_size)
 	return (coordinates);
 }
 
-void	fill_coordinates_array(int **coordinates, char *map_line)
+static void	fill_coordinates_array(int **coordinates, char *map_line)
 {
 	int	i;
 

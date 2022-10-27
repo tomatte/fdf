@@ -1,19 +1,19 @@
 #include "../fdf.h"
 
-void	walk_longest(t_line *line_data)
+static void	walk_longest(t_line *line_data)
 {
 	line_data->proportion -= line_data->longest;
 	line_data->x += line_data->dx1;
 	line_data->y += line_data->dy1;
 }
 
-void	walk_both(t_line *line_data)
+static void	walk_both(t_line *line_data)
 {
 	line_data->x += line_data->dx2;
 	line_data->y += line_data->dy2;
 }
 
-void	walk_pixel(t_line *line_data)
+static void	walk_pixel(t_line *line_data)
 {
         if (line_data->proportion >= line_data->longest)
 			walk_longest(line_data);

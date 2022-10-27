@@ -3,6 +3,7 @@
 
     #include <mlx.h>
     #include "../libft/libftprintf.h"
+    #include <fcntl.h>
 
     typedef struct  s_data
     {
@@ -37,5 +38,6 @@
     void	my_mlx_pixel_put(t_data *img, int x, int y, int color);
     void    draw_line(t_data *img, t_line line_data);
     void    asign_values(t_line *line_data);
+    t_line	line_coordinates(int x, int y, int x2, int y2);
 
 #endif

@@ -1,6 +1,6 @@
 #include "../fdf.h"
 
-void	initialize_line_struct(t_line *line_data)
+static void	initialize_line_struct(t_line *line_data)
 {
 	line_data->w = line_data->x2 - line_data->x;
     line_data->h = line_data->y2 - line_data->y;
@@ -13,7 +13,7 @@ void	initialize_line_struct(t_line *line_data)
     line_data->shortest = ft_abs(line_data->h);
 }
 
-void	decide_xy_direction(t_line *line_data)
+static void	decide_xy_direction(t_line *line_data)
 {
     if (line_data->w < 0)
     {
