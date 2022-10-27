@@ -6,7 +6,7 @@ void	new_img(void *mlx, t_data *img)
 	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->size_line, &img->endian);
 }
 
-void	init_fill(t_data *img, int width, int height, char title[])
+static void	fill_img_data(t_data *img, int width, int height, char title[])
 {
 	img->width = width;
 	img->height = height;
@@ -25,11 +25,11 @@ t_line	get_line_data(int x, int y, int x2, int y2)
 	return (line_data);
 }
 
-int	is_text(char *file_name)
+int	is_fdf(char *file_name)
 {
 	char *file_type;
 
-	file_type = ft_strnstr(file_name, ".txt", ft_strlen(file_name));
+	file_type = ft_strnstr(file_name, ".fdf", ft_strlen(file_name));
 	if (!file_type)
 		return (0);
 	return (!file_type[4]);
@@ -39,7 +39,7 @@ int	verify_inputs(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
-	return (is_text(argv[1]));
+	return (is_fdf(argv[1]));
 }
 
 int main(int argc, char **argv)

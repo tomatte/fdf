@@ -1,7 +1,7 @@
 SRC			=	./src/fdf_test.c ./src/my_mlx_pixel_put.c ./src/line/draw_line.c \
 				./src/line/asign_values.c ./src/line/line_coordinates.c \
 				./src/draw_table/get_next_coordinates.c \
-				./src/draw_table/draw_map_line.c \
+				./src/draw_table/draw_map_line.c ./src/draw_table/draw_map.c \
 
 
 

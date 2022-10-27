@@ -43,8 +43,8 @@
     t_line	line_coordinates(int x, int y, int x2, int y2);
 
     // --- DRAW_TABLE --- //
-    int *get_next_coordinates(int fd);
-    int	draw_map_line(t_data *img, int fd, int l_index);
-    
+    int     *get_next_coordinates(int fd);
+    int	    draw_map_line(t_data *img, int fd, int l_index);
+    void    draw_map(t_data *img, char *file_name);
 
 #endif

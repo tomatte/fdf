@@ -1,4 +1,4 @@
-#include "fdf.h"
+#include "../fdf.h"
 
 static int    open_map(char *file_name)
 {

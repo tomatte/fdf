@@ -30,6 +30,8 @@ static void	put_lines(t_data *img, int *coordinates, int l_index)
 	int		c;
 	int		s;
 
+	if (!coordinates)
+		return ;
 	s = 20;
 	c = 0;
     while (++c < coordinates[0] - 1)
@@ -47,5 +49,8 @@ int	draw_map_line(t_data *img, int fd, int l_index)
     int     *coordinates;
 
     coordinates = get_next_coordinates(fd);
+	if (!coordinates)
+		return (0);
     put_lines(img, coordinates, l_index);
+	return (1);
 }
