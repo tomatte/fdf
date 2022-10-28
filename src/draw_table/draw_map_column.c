@@ -33,5 +33,5 @@ void	draw_map_column(t_data *img, int *previous, int *current, int line)
 {
 	if (!previous || !current)
 		return ;
-	put_columns(img, previous, current, line);
+	put_columns(img, previous, current, line - 1);
 }

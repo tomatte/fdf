@@ -13,23 +13,23 @@ static int    open_map(char *file_name)
 void    draw_map(t_data *img, char *file_name)
 {
 	int     fd;
-	int     l_index;
+	int     line;
 	int     *previous_coordinates;
 	int		*current_coordinates;
 
 	fd = open_map(file_name);
-	l_index = 0;
-	previous_coordinates = draw_map_line(img, fd, l_index);
+	line = 0;
+	previous_coordinates = draw_map_line(img, fd, line);
 	if (!previous_coordinates)
 		return ;
 	while (1)
 	{
-		current_coordinates = draw_map_line(img, fd, l_index);
+		line++;
+		current_coordinates = draw_map_line(img, fd, line);
 		if (!current_coordinates)
 			return ;
-		draw_map_column(img, previous_coordinates, current_coordinates, l_index);
+		draw_map_column(img, previous_coordinates, current_coordinates, line);
 		previous_coordinates = current_coordinates;
-		l_index++;
 	}
 }
 
