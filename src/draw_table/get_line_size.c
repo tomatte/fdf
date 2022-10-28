@@ -8,6 +8,8 @@ static void	pass_spaces(char **str)
 
 static void	pass_digits(char **str)
 {
+	if (ft_issign(**str))
+		(*str)++;
 	while (ft_isdigit(**str))
 		(*str)++;
 }
@@ -16,6 +18,8 @@ int get_line_size(char *map_line)
 {
 	int i;
 
+	if (!map_line || !*map_line)
+		return (0);
 	i = 0;
 	while (*map_line)
 	{

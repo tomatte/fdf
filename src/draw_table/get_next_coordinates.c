@@ -17,7 +17,7 @@ static int	*get_coordinates_array(int line_size)
 {
 	int	*coordinates;
 
-	if (line_size <= 0)
+	if (line_size <= 1)
 		return (NULL);
 	coordinates = ft_calloc(line_size + 1, sizeof(int));
 	if (!coordinates)

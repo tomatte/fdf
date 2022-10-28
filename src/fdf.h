@@ -46,5 +46,6 @@
     int     *get_next_coordinates(int fd);
     int	    draw_map_line(t_data *img, int fd, int l_index);
     void    draw_map(t_data *img, char *file_name);
+    int     get_line_size(char *map_line);
 
 #endif

@@ -24,7 +24,6 @@ void    draw_map(t_data *img, char *file_name)
 		//draw_map_column(img, fd, l_index);
 		l_index++;
 	}
-
 }
 
 
