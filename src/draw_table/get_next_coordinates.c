@@ -1,34 +1,21 @@
 #include "../fdf.h"
 
-static int	next_number(char **str)
+static char	next_number(char **str)
 {
 	int	num;
 
-	*str = ft_isnumber(*str)
-	if (!*str)
+	*str = ft_isnumber(*str);
+	if (!*str || !**str)
 		return (0);
 	num = ft_atoi(*str);
-	while (ft_issign(**str) || ft_isdigit(**str))
+	while (!ft_isspace(**str) || !**str)
 		(*str)++;
 	return (num);
-}
-
-static int get_line_size(char *map_line)
-{
-	int i;
-
-	if (!map_line)
-		return (0);
-	i = 0;
-	while (next_number(&map_line) != NULL)
-		i++;
-	return (i);
 }
 
 static int	*get_coordinates_array(int line_size)
 {
 	int	*coordinates;
-	int	i;
 
 	if (line_size <= 0)
 		return (NULL);
