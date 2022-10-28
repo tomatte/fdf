@@ -14,14 +14,21 @@ void    draw_map(t_data *img, char *file_name)
 {
 	int     fd;
 	int     l_index;
-	int     *next_line_coordinates;
-	
+	int     *previous_coordinates;
+	int		*current_coordinates;
 
 	fd = open_map(file_name);
 	l_index = 0;
-	while (draw_map_line(img, fd, l_index))
+	previous_coordinates = draw_map_line(img, fd, l_index);
+	if (!previous_coordinates)
+		return ;
+	while (1)
 	{
-		//draw_map_column(img, fd, l_index);
+		current_coordinates = draw_map_line(img, fd, l_index);
+		if (!current_coordinates)
+			return ;
+		draw_map_column(img, previous_coordinates, current_coordinates, l_index);
+		previous_coordinates = current_coordinates;
 		l_index++;
 	}
 }

@@ -44,8 +44,10 @@
 
     // --- DRAW_TABLE --- //
     int     *get_next_coordinates(int fd);
-    int	    draw_map_line(t_data *img, int fd, int l_index);
+    int	*draw_map_line(t_data *img, int fd, int line);
     void    draw_map(t_data *img, char *file_name);
     int     get_line_size(char *map_line);
+    void	put_pixel(t_data *img, int l_index, int column);
+    void	draw_map_column(t_data *img, int *previous, int *current, int line);
 
 #endif
