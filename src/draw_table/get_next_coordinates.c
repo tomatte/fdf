@@ -1,31 +1,28 @@
 #include "../fdf.h"
 
-static int find_number(char **str)
+static int	next_number(char **str)
 {
-    int num;
+	int	num;
 
-    while (**str == ' ' || **str == '\t')
-        (*str)++;
-    if (ft_isdigit(**str))
-    {
-        num = ft_atoi(*str);
-        while (ft_isdigit(**str))
-            (*str)++;
-        return (num);
-    }
-    return (-1);
+	*str = ft_isnumber(*str)
+	if (!*str)
+		return (0);
+	num = ft_atoi(*str);
+	while (ft_issign(**str) || ft_isdigit(**str))
+		(*str)++;
+	return (num);
 }
 
 static int get_line_size(char *map_line)
 {
-    int i;
+	int i;
 
-    if (!map_line)
-        return (0);
-    i = 0;
-    while (find_number(&map_line) >= 0)
-        i++;
-    return (i);
+	if (!map_line)
+		return (0);
+	i = 0;
+	while (next_number(&map_line) != NULL)
+		i++;
+	return (i);
 }
 
 static int	*get_coordinates_array(int line_size)
@@ -50,18 +47,18 @@ static void	fill_coordinates_array(int **coordinates, char *map_line)
 		return ;
 	i = 0;
 	while (++i < **coordinates)
-		(*coordinates)[i] = find_number(&map_line);
+		(*coordinates)[i] = next_number(&map_line);
 }
 
 int *get_next_coordinates(int fd)
 {
-    char	*map_line;
-    int		line_size;
-    int		*coordinates;
+	char	*map_line;
+	int		line_size;
+	int		*coordinates;
 
-    map_line = get_next_line(fd);
-    line_size = get_line_size(map_line);
-    coordinates = get_coordinates_array(line_size);
+	map_line = get_next_line(fd);
+	line_size = get_line_size(map_line);
+	coordinates = get_coordinates_array(line_size);
 	fill_coordinates_array(&coordinates, map_line);
 	return (coordinates);
 }
