@@ -61,7 +61,11 @@
 	void    asign_values(t_line *line_data);
 	t_line	line_coordinates(int x, int y, int x2, int y2);
 
+	// --- READ_MAP --- //
+	char    *read_map(char *file_name);
+
 	// --- DRAW_MAP --- //
+
 
 
 #endif

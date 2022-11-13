@@ -23,13 +23,16 @@ static void	render_image(t_data *img)
 static void	argv_validation(int argc, char **argv)
 {
 	char	*type;
+	char	*file_name;
+
 	if (argc < 2)
 	{
 		ft_printf("You need to pass a .fdf file as argument!\n");
 		exit(EXIT_FAILURE);
 	}
-    argv[1]++;
-	type = ft_strchr(argv[1], '.');
+	file_name = argv[1];
+    file_name++;
+	type = ft_strchr(file_name, '.');
 	if (!type || ft_strncmp(type, ".fdf", 4) || type[4])
     {
 		ft_printf("Invalid file!\n");
@@ -52,7 +55,8 @@ int main(int argc, char **argv)
 
 	argv_validation(argc, argv);
 	img = new_image(1080, 720, "Land");
-	draw_map(&img, argv[1]);
+	read_map(argv[1]);
+	//draw_map(&img, argv[1]);
 	render_image(&img);
     return (0);
 }
