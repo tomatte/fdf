@@ -3,7 +3,7 @@
 void	new_img(void *mlx, t_data *img)
 {
 	img->img = mlx_new_image(mlx, img->width, img->height);
-	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->size_line, &img->endian);
+	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->line_length, &img->endian);
 }
 
 static void	fill_img_data(t_data *img, int width, int height, char title[])
@@ -14,43 +14,32 @@ static void	fill_img_data(t_data *img, int width, int height, char title[])
 	img->window = mlx_new_window(img->mlx, width, height, title);
 }
 
-t_line	get_line_data(int x, int y, int x2, int y2)
+int	verify_file_type(char *file_name, char *file_type)
 {
-	t_line	line_data;
 
-	line_data.x = x;
-	line_data.y = y;
-	line_data.x2 = x2;
-	line_data.y2 = y2;
-	return (line_data);
 }
 
-int	is_fdf(char *file_name)
+//provavelmente se o usuario mandar aquivo.algo.fdf irá passar na validação
+//e isso deve ser considerado um erro
+int	input_validation(int argc, char **argv)
 {
-	char *file_type;
+	char	*type;
 
-	file_type = ft_strnstr(file_name, ".fdf", ft_strlen(file_name));
-	if (!file_type)
-		return (0);
-	return (!file_type[4]);
-}
-
-int	verify_inputs(int argc, char **argv)
-{
 	if (argc < 2)
-		return (0);
-	return (is_fdf(argv[1]));
+		exit(EXIT_FAILURE);
+	type = ft_strnstr(argv[1], ".fdf", ft_strlen(argv[1]));
+	if (!type || type[4])
+		exit(EXIT_FAILURE);
 }
 
 int main(int argc, char **argv)
 {
 	t_data	img;
 
-	if (!verify_inputs(argc, argv))
-		return (-1);
+	input_validation(argc, argv);
 	fill_img_data(&img, 1080, 720, "Land");
 	new_img(img.mlx, &img);
-	draw_table(&img, argv[1]);
+	draw_map(&img, argv[1]);
 	ft_printf("end\n");
     return (0);
 }
