@@ -1,45 +1,49 @@
 #include "fdf.h"
 
-void	new_img(void *mlx, t_data *img)
+static t_data	new_image(int width, int height, char *title)
 {
-	img->img = mlx_new_image(mlx, img->width, img->height);
-	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->line_length, &img->endian);
+	t_data	img;
+
+	img.width = width;
+	img.height = height;
+	img.mlx = mlx_init();
+	img.window = mlx_new_window(img.mlx, width, height, title);
+	img.img = mlx_new_image(img.mlx, img.width, img.height);
+	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length, &img.endian);
+	return img;
 }
 
-static void	fill_img_data(t_data *img, int width, int height, char title[])
+static void	render_image(t_data *img)
 {
-	img->width = width;
-	img->height = height;
-	img->mlx = mlx_init();
-	img->window = mlx_new_window(img->mlx, width, height, title);
+    mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
+    mlx_loop(img->mlx);
+	ft_printf("program ended.\n");
 }
 
-int	verify_file_type(char *file_name, char *file_type)
-{
-
-}
-
-//provavelmente se o usuario mandar aquivo.algo.fdf irá passar na validação
-//e isso deve ser considerado um erro
-int	input_validation(int argc, char **argv)
+static void	argv_validation(int argc, char **argv)
 {
 	char	*type;
-
 	if (argc < 2)
+	{
+		ft_printf("You need to pass a .fdf file as argument!\n");
 		exit(EXIT_FAILURE);
-	type = ft_strnstr(argv[1], ".fdf", ft_strlen(argv[1]));
-	if (!type || type[4])
+	}
+    argv[1]++;
+	type = ft_strchr(argv[1], '.');
+	if (!type || ft_strncmp(type, ".fdf", 4) || type[4])
+    {
+		ft_printf("Invalid file!\n");
 		exit(EXIT_FAILURE);
+    }
 }
 
 int main(int argc, char **argv)
 {
 	t_data	img;
 
-	input_validation(argc, argv);
-	fill_img_data(&img, 1080, 720, "Land");
-	new_img(img.mlx, &img);
-	draw_map(&img, argv[1]);
-	ft_printf("end\n");
+	argv_validation(argc, argv);
+	img = new_image(1080, 720, "Land");
+	//draw_map(&img, argv[1]);
+	render_image(&img);
     return (0);
 }

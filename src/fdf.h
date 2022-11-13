@@ -43,20 +43,25 @@
 		int	y;
 		int width;
 		int height;
-		int *coordinates;
-		int	size;
 	}				t_tile;
 
+	typedef struct	s_map
+	{
+		int	**lines;
+		int	**columns;
+		int	line_qty;
+		int	column_qty;
+		int	line_size;
+		int	column_size;
+	}				t_map;
+
+	// --- Line ---
 	void	my_mlx_pixel_put(t_data *img, int x, int y, int color);
 	void    draw_line(t_data *img, t_line line_data);
 	void    asign_values(t_line *line_data);
 	t_line	line_coordinates(int x, int y, int x2, int y2);
 
-	// --- DRAW_TABLE --- //
-	int 	*get_next_coordinates(int fd);
-	int		*draw_map_lines(t_data *img, int fd, t_tile tile);
-	void    draw_map(t_data *img, char *file, int tile_width, int tile_height);
-	int     get_line_size(char *map_line);
-	int		*draw_map_columns(t_data *img, t_tile tile);
+	// --- DRAW_MAP --- //
+
 
 #endif
