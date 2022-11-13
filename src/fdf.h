@@ -6,6 +6,7 @@
 	#include <fcntl.h>
 
 	# define RED 0x00FF0000
+	# define MAX_FILE_SIZE 4096
 
 	typedef struct  s_data
 	{
@@ -55,6 +56,9 @@
 		int	column_size;
 	}				t_map;
 
+	//print an error message and exit program
+	void	error_exit(char *error_message);
+
 	// --- Line ---
 	void	my_mlx_pixel_put(t_data *img, int x, int y, int color);
 	void    draw_line(t_data *img, t_line line_data);
@@ -62,7 +66,8 @@
 	t_line	line_coordinates(int x, int y, int x2, int y2);
 
 	// --- READ_MAP --- //
-	char    *read_map(char *file_name);
+	char    *get_map(char *file_name);
+	char	*read_file(int fd);
 
 	// --- DRAW_MAP --- //
 

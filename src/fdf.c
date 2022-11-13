@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 
 	argv_validation(argc, argv);
 	img = new_image(1080, 720, "Land");
-	read_map(argv[1]);
+	get_map(argv[1]);
 	//draw_map(&img, argv[1]);
 	render_image(&img);
     return (0);
