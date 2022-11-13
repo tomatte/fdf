@@ -37,13 +37,22 @@ static void	argv_validation(int argc, char **argv)
     }
 }
 
+/* --- PLANNING ---
+ - read full map and store it as a string
+ - validate map values using this string
+ - create a function to get values based on it's position on the string
+ example: get_map_value(0, 1) will return the second column of the first line
+ obs: lines are separated by line breaks and columns by spaces
+ - use this function to draw the map
+ */
+
 int main(int argc, char **argv)
 {
 	t_data	img;
 
 	argv_validation(argc, argv);
 	img = new_image(1080, 720, "Land");
-	//draw_map(&img, argv[1]);
+	draw_map(&img, argv[1]);
 	render_image(&img);
     return (0);
 }

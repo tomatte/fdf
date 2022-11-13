@@ -1,5 +1,5 @@
-SRC			=	./src/fdf_test.c ./src/my_mlx_pixel_put.c ./src/line/draw_line.c \
-				./src/line/asign_values.c ./src/line/line_coordinates.c \
+SRC			=	./src/fdf_test.c ./src/my_mlx_pixel_put.c ./src/draw_line/draw_line.c \
+				./src/draw_line/asign_values.c ./src/draw_line/line_coordinates.c \
 
 H_SRC		=	./src/fdf.h ./libft/libftprintf.h
 
