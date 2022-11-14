@@ -70,7 +70,8 @@
 	char	*read_file(int fd);
 
 	// --- DRAW_MAP --- //
-
-
+	
+	//find a number in a text and returns it as an int
+	int	get_number(int line, int column, char *text);
 
 #endif

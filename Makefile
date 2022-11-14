@@ -6,6 +6,7 @@ SRC			=	./src/fdf.c \
 				./src/get_map/get_map.c \
 				./src/get_map/read_file.c \
 				./src/others/error_exit.c \
+				./src/others/get_number.c \
 
 H_SRC		=	./src/fdf.h ./libft/libftprintf.h
 
