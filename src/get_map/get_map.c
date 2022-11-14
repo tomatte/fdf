@@ -10,6 +10,15 @@ static int	open_file(char *file_name)
 	return (fd);
 }
 
+static void	remove_border_spaces(char **str)
+{
+	char	*aux;
+
+	aux = *str;
+	*str = ft_strtrim(*str, " \n\t");
+	mem_clear((void *) &aux);
+}
+
 char    *get_map(char *file_name)
 {
 	char	*map;
@@ -17,7 +26,6 @@ char    *get_map(char *file_name)
 
 	fd = open_file(file_name);
 	map = read_file(fd);
-	ft_printf("%s\n", map);
-	exit(1);
+	remove_border_spaces(&map);
 	return (map);
 }

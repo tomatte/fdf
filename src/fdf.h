@@ -70,8 +70,14 @@
 	char	*read_file(int fd);
 
 	// --- DRAW_MAP --- //
+	void	draw_map(t_data *img, char *map);
+	int	get_map_columns(char *map);
+	int	get_map_lines(char *map);
 	
 	//find a number in a text and returns it as an int
 	int	get_number(int line, int column, char *text);
+
+	//clear memory
+	void	mem_clear(void **p);
 
 #endif

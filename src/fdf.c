@@ -54,11 +54,12 @@ static void	argv_validation(int argc, char **argv)
 int main(int argc, char **argv)
 {
 	t_data	img;
+	char	*map;
 
 	argv_validation(argc, argv);
 	img = new_image(1080, 720, "Land");
-	get_map(argv[1]);
-	//draw_map(&img, argv[1]);
+	map = get_map(argv[1]);
+	draw_map(&img, map);
 	render_image(&img);
     return (0);
 }

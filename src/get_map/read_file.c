@@ -1,14 +1,5 @@
 #include "../fdf.h"
 
-static void	mem_clear(void **p)
-{
-	if (*p)
-	{
-		free(*p);
-		*p = NULL;
-	}
-}
-
 static char	*join_and_free(char *s1, char *s2)
 {
 	char	*result;
