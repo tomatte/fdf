@@ -41,9 +41,11 @@ static void	argv_validation(int argc, char **argv)
 }
 
 /* --- PLANNING ---
- - read full map and store it as a string
+ (COMPLETED) - read full map and store it as a string
+ - create A get_word(int line, int word, char *text) function
+	* lines are separated by line-breaks and words by spaces
+	* just use this logic to create the function 
  - validate map values using this string
- - create a function to get values based on it's position on the string
  example: get_map_value(0, 1) will return the second column of the first line
  obs: lines are separated by line breaks and columns by spaces
  - use this function to draw the map
