@@ -21,7 +21,7 @@ static void	walk_pixel(t_line *line_data)
 			walk_both(line_data);
 }
 
-void    draw_line(t_data *img, t_line line_data)
+void    draw_line(t_img *img, t_line line_data)
 {
 	int	i;
 

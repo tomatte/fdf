@@ -11,6 +11,7 @@ SRC			=	./src/fdf.c \
 				./src/draw_map/draw_map.c \
 				./src/draw_map/get_map_columns.c \
 				./src/draw_map/get_map_lines.c \
+				./src/draw_map/draw_isometric_line.c \
 
 H_SRC		=	./src/fdf.h ./libft/libftprintf.h
 

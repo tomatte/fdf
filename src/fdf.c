@@ -1,8 +1,8 @@
 #include "fdf.h"
 
-static t_data	new_image(int width, int height, char *title)
+static t_img	new_image(int width, int height, char *title)
 {
-	t_data	img;
+	t_img	img;
 
 	img.width = width;
 	img.height = height;
@@ -13,7 +13,7 @@ static t_data	new_image(int width, int height, char *title)
 	return img;
 }
 
-static void	render_image(t_data *img)
+static void	render_image(t_img *img)
 {
     mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
     mlx_loop(img->mlx);
@@ -53,7 +53,7 @@ static void	argv_validation(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-	t_data	img;
+	t_img	img;
 	char	*map;
 
 	argv_validation(argc, argv);

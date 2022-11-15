@@ -20,6 +20,8 @@ int	get_map_columns(char *map)
 {
 	int	columns;
 
+	if (!map)
+		error_exit("Map is NULL.\n");
 	columns = 1;
 	while (1)
 	{

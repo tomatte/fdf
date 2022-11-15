@@ -8,7 +8,7 @@
 	# define RED 0x00FF0000
 	# define MAX_FILE_SIZE 4096
 
-	typedef struct  s_data
+	typedef struct  s_img
 	{
 		void    *mlx;
 		void    *window;
@@ -19,7 +19,7 @@
 		int		line_length;
 		int     endian;
 		char    *addr;
-	}			    t_data;
+	}			    t_img;
 
 	typedef struct  s_line
 	{
@@ -48,20 +48,25 @@
 
 	typedef struct	s_map
 	{
-		int	**lines;
-		int	**columns;
-		int	line_qty;
-		int	column_qty;
-		int	line_size;
-		int	column_size;
+		char	*map;
+		int		columns;
+		int		lines;
 	}				t_map;
+
+	typedef struct	s_data
+	{
+		t_img	*img;
+		t_line	*line;
+		t_tile	*tile;
+		t_map	*map;
+	}				t_data;
 
 	//print an error message and exit program
 	void	error_exit(char *error_message);
 
 	// --- Line ---
-	void	my_mlx_pixel_put(t_data *img, int x, int y, int color);
-	void    draw_line(t_data *img, t_line line_data);
+	void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
+	void    draw_line(t_img *img, t_line line_data);
 	void    asign_values(t_line *line_data);
 	t_line	line_coordinates(int x, int y, int x2, int y2);
 
@@ -70,9 +75,10 @@
 	char	*read_file(int fd);
 
 	// --- DRAW_MAP --- //
-	void	draw_map(t_data *img, char *map);
-	int	get_map_columns(char *map);
-	int	get_map_lines(char *map);
+	void	draw_map(t_img *img, char *map);
+	int		get_map_columns(char *map);
+	int		get_map_lines(char *map);
+	void	draw_isometric_line(t_img *img, t_line line);
 	
 	//find a number in a text and returns it as an int
 	int	get_number(int line, int column, char *text);

@@ -5,7 +5,7 @@ int	get_map_lines(char *map)
 	int	i;
 
 	if (!map)
-		return (0);
+		error_exit("Map is NULL.\n");
 	i = 1;
 	while (1)
 	{
