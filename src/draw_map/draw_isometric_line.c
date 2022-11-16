@@ -4,7 +4,7 @@ static int	get_pixel_x(t_img *img, t_tile *tile)
 {
 	int		pixel_x;
 
-	pixel_x = (tile->x - tile->y ) * (tile->width / 2);
+	pixel_x = (tile->y - tile->x ) * (tile->width / 2);
 	pixel_x += img->width / 2;
 	return (pixel_x);
 }
@@ -39,10 +39,10 @@ void	draw_isometric_line(t_img *img, t_line line)
 	tile.y = line.y2;
 	line.x2 = get_pixel_x(img, &tile);
 	line.y2 = get_pixel_y(img, &tile);
-	ft_printf("test 1: \n");
+/* 	ft_printf("test 1: \n");
 	ft_printf("linex: %d\n", line.x);
 	ft_printf("liney: %d\n", line.y);
 	ft_printf("linex2: %d\n", line.x2);
-	ft_printf("liney2: %d\n", line.y2);
+	ft_printf("liney2: %d\n", line.y2); */
 	draw_line(img, line);
 }

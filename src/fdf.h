@@ -80,7 +80,8 @@
 	int		get_map_lines(char *map);
 	void	draw_isometric_line(t_img *img, t_line line);
 	
-	//find a number in a text and returns it as an int
+	//pass the line and column as argument
+	//and the function will return the number of that location
 	int	get_number(int line, int column, char *text);
 
 	//clear memory
