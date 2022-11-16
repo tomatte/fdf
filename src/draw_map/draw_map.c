@@ -27,12 +27,13 @@ static void	draw_map_columns(t_img *img, t_map *map)
 	int	j;
 
 	i = -1;
-	while (++i <= map->lines)
+	while (++i < map->lines)
 	{
 		j = -1;
 		while (++j < map->columns)
 		{
-			draw_isometric_line(img, new_line(i, j, i, j + 1));
+			if (get_number(i, j, map->map) && get_number(i, j + 1, map->map))
+				draw_isometric_line(img, new_line(i, j, i, j + 1));
 		}
 	}
 }
@@ -41,16 +42,16 @@ static void	draw_map_lines(t_img *img, t_map *map)
 {
 	int	i;
 	int	j;
+	int	num;
 
 	j = -1;
-	while (++j <= map->lines)
+	while (++j < map->lines)
 	{
 		i = -1;
 		while (++i < map->columns)
 		{
-			ft_printf("i: %d\n", i);
-			ft_printf("j: %d\n", j);
-			draw_isometric_line(img, new_line(i, j, i + 1, j));
+			if (get_number(i, j, map->map) && get_number(i + 1, j, map->map))
+				draw_isometric_line(img, new_line(i, j, i + 1, j));
 		}
 	}
 }

@@ -16,6 +16,7 @@ static t_img	new_image(int width, int height, char *title)
 static void	render_image(t_img *img)
 {
     mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
+	ft_printf("rendering map...");
     mlx_loop(img->mlx);
 	ft_printf("program ended.\n");
 }

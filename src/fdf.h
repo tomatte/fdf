@@ -7,6 +7,8 @@
 
 	# define RED 0x00FF0000
 	# define MAX_FILE_SIZE 4096
+	# define TILE_WIDTH 20
+	# define TILE_HEIGHT 10
 
 	typedef struct  s_img
 	{

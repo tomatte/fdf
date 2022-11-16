@@ -23,8 +23,8 @@ static t_tile	new_tile(int x, int y)
 
 	tile.x = x;
 	tile.y = y;
-	tile.width = 36;
-	tile.height = 18;
+	tile.width = TILE_WIDTH;
+	tile.height = TILE_HEIGHT;
 	return (tile);
 }
 
