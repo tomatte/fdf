@@ -81,6 +81,7 @@
 	int		get_map_columns(char *map);
 	int		get_map_lines(char *map);
 	void	draw_isometric_line(t_img *img, t_line line);
+	void	put_isometric_pixel(t_img *img, int x, int y);
 	
 	//pass the line and column as argument
 	//and the function will return the number of that location

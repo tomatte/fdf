@@ -28,6 +28,16 @@ static t_tile	new_tile(int x, int y)
 	return (tile);
 }
 
+void	put_isometric_pixel(t_img *img, int x, int y)
+{
+	t_tile	tile;
+
+	tile = new_tile(x, y);
+	x = get_pixel_x(img, &tile);
+	y = get_pixel_y(img, &tile);
+	my_mlx_pixel_put(img, x, y, RED);
+}
+
 void	draw_isometric_line(t_img *img, t_line line)
 {
 	t_tile	tile;
@@ -39,10 +49,5 @@ void	draw_isometric_line(t_img *img, t_line line)
 	tile.y = line.y2;
 	line.x2 = get_pixel_x(img, &tile);
 	line.y2 = get_pixel_y(img, &tile);
-/* 	ft_printf("test 1: \n");
-	ft_printf("linex: %d\n", line.x);
-	ft_printf("liney: %d\n", line.y);
-	ft_printf("linex2: %d\n", line.x2);
-	ft_printf("liney2: %d\n", line.y2); */
 	draw_line(img, line);
 }
