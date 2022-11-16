@@ -21,7 +21,7 @@ static t_map	get_map_values(char *map_str)
 	return (map);
 }
 
-static void	draw(t_img *img, t_map *map)
+static void	draw_y(t_img *img, t_map *map)
 {
 	int	i;
 	int	j;
@@ -32,22 +32,34 @@ static void	draw(t_img *img, t_map *map)
 		j = -1;
 		while (++j < map->columns)
 		{
-			//break conditionals into two separated functions
-			if (get_number(i, j, map->map) && get_number(i, j + 1, map->map))
-			{
-				draw_isometric_line(img, new_line(i, j, i, j + 1));
-			}
-			else
-				put_isometric_pixel(img, i, j);
 			if (get_number(i, j, map->map) && get_number(i + 1, j, map->map))
-			{
 				draw_isometric_line(img, new_line(i, j, i + 1, j));
-			}
 			else
 				put_isometric_pixel(img, i, j);
 		}
 	}
 }
+
+static void	draw_x(t_img *img, t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < map->lines)
+	{
+		
+		j = -1;
+		while (++j < map->columns - 1)
+		{
+			if (get_number(i, j, map->map) && get_number(i, j + 1, map->map))
+				draw_isometric_line(img, new_line(i, j, i, j + 1));
+			else
+				put_isometric_pixel(img, i, j);
+		}
+	}
+}
+
 
 void	draw_map(t_img *img, char *map_str)
 {
@@ -58,5 +70,6 @@ void	draw_map(t_img *img, char *map_str)
 	map = get_map_values(map_str);
 	ft_printf("columns: %d\n", map.columns);
 	ft_printf("lines: %d\n", map.lines);
-	draw(img, &map);
+	draw_x(img, &map);
+	draw_y(img, &map);
 }
