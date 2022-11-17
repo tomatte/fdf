@@ -39,10 +39,13 @@ void	put_isometric_pixel(t_img *img, int x, int y)
 	my_mlx_pixel_put(img, x, y, RED);
 }
 
-void	draw_isometric_line(t_img *img, t_line line, int depth1, int depth2)
+void	draw_isometric_line(t_img *img, t_line line, t_map *map)
 {
 	t_tile	tile;
-
+	int	depth1;
+	int	depth2;
+	depth1 = get_number(line.x, line.y, map->map);
+	depth2 = get_number(line.x2, line.y2, map->map);
 	tile = new_tile(line.x, line.y);
 	line.x = get_pixel_x(img, &tile);
 	line.y = get_pixel_y(img, &tile);
