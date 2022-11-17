@@ -32,10 +32,7 @@ static void	draw_y(t_img *img, t_map *map)
 		j = -1;
 		while (++j < map->columns)
 		{
-			if (get_number(i, j, map->map) && get_number(i + 1, j, map->map))
-				draw_isometric_line(img, new_line(i, j, i + 1, j));
-			else
-				put_isometric_pixel(img, i, j);
+			draw_isometric_line(img, new_line(i, j, i + 1, j), get_number(i, j, map->map), get_number(i + 1, j, map->map));
 		}
 	}
 }
@@ -52,10 +49,7 @@ static void	draw_x(t_img *img, t_map *map)
 		j = -1;
 		while (++j < map->columns - 1)
 		{
-			if (get_number(i, j, map->map) && get_number(i, j + 1, map->map))
-				draw_isometric_line(img, new_line(i, j, i, j + 1));
-			else
-				put_isometric_pixel(img, i, j);
+			draw_isometric_line(img, new_line(i, j, i, j + 1), get_number(i, j, map->map), get_number(i, j + 1, map->map));
 		}
 	}
 }
