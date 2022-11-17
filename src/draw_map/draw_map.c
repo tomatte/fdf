@@ -27,7 +27,7 @@ static void	draw_y(t_img *img, t_map *map)
 	int	j;
 
 	i = -1;
-	while (++i < map->lines)
+	while (++i < map->lines - 1)
 	{
 		j = -1;
 		while (++j < map->columns)
