@@ -9,12 +9,16 @@ static int	get_pixel_x(t_img *img, t_tile *tile)
 	return (pixel_x);
 }
 
-static int	get_pixel_y(t_img *img, t_tile *tile)
+static int	get_pixel_y(t_img *img, t_tile *tile, t_map *map)
 {
 	int		pixel_y;
+	int		centralize_map;
+	int		map_height;
 
 	pixel_y = (tile->x + tile->y ) * (tile->height / 2);
-	pixel_y += img->height / 2;
+	map_height = (map->columns + map->lines) * (tile->height / 2);
+	centralize_map = (img->height / 2) - (map_height / 2);
+	pixel_y += centralize_map;
 	return (pixel_y);
 }
 
@@ -29,13 +33,13 @@ static t_tile	new_tile(int x, int y)
 	return (tile);
 }
 
-void	put_isometric_pixel(t_img *img, int x, int y)
+void	put_isometric_pixel(t_img *img, int x, int y, t_map *map)
 {
 	t_tile	tile;
 
 	tile = new_tile(x, y);
 	x = get_pixel_x(img, &tile);
-	y = get_pixel_y(img, &tile);
+	y = get_pixel_y(img, &tile, map);
 	my_mlx_pixel_put(img, x, y, RED);
 }
 
@@ -48,11 +52,11 @@ void	draw_isometric_line(t_img *img, t_line line, t_map *map)
 	depth2 = get_number(line.x2, line.y2, map->map);
 	tile = new_tile(line.x, line.y);
 	line.x = get_pixel_x(img, &tile);
-	line.y = get_pixel_y(img, &tile);
+	line.y = get_pixel_y(img, &tile, map);
 	tile.x = line.x2;
 	tile.y = line.y2;
 	line.x2 = get_pixel_x(img, &tile);
-	line.y2 = get_pixel_y(img, &tile);
+	line.y2 = get_pixel_y(img, &tile, map);
 	line.y -= depth1 * (tile.height >> 3);
 	line.y2 -= depth2 * (tile.height >> 3);
 	draw_line(img, line);
