@@ -90,4 +90,5 @@
 	//clear memory
 	void	mem_clear(void **p);
 
+	int	ft_hextoi(char *hex);
 #endif
