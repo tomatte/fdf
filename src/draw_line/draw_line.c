@@ -29,7 +29,7 @@ void    draw_line(t_img *img, t_line line_data)
     i = 0;
     while (i++ <= line_data.longest)
     {
-        my_mlx_pixel_put(img, line_data.x, line_data.y, 0x00FF0000);
+        my_mlx_pixel_put(img, line_data.x, line_data.y, line_data.color);
         line_data.proportion += line_data.shortest;
 		walk_pixel(&line_data);
     }

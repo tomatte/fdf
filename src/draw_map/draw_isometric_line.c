@@ -48,8 +48,12 @@ void	draw_isometric_line(t_img *img, t_line line, t_map *map)
 	t_tile	tile;
 	int	depth1;
 	int	depth2;
+
 	depth1 = get_number(line.x, line.y, map->map);
 	depth2 = get_number(line.x2, line.y2, map->map);
+	line.color = get_color(line.x, line.y, map->map);
+	if (line.color == RED)
+		line.color = get_color(line.x2, line.y2, map->map);
 	tile = new_tile(line.x, line.y);
 	line.x = get_pixel_x(img, &tile);
 	line.y = get_pixel_y(img, &tile, map);
@@ -57,7 +61,7 @@ void	draw_isometric_line(t_img *img, t_line line, t_map *map)
 	tile.y = line.y2;
 	line.x2 = get_pixel_x(img, &tile);
 	line.y2 = get_pixel_y(img, &tile, map);
-	line.y -= depth1 * (tile.height >> 3);
-	line.y2 -= depth2 * (tile.height >> 3);
+	line.y -= depth1 * (tile.height / 2);
+	line.y2 -= depth2 * (tile.height / 2);
 	draw_line(img, line);
 }
