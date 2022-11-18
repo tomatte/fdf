@@ -90,5 +90,8 @@
 	//clear memory
 	void	mem_clear(void **p);
 
+	//color
+	int	get_color(int line, int column, char *text);
 	int	ft_hextoi(char *hex);
+
 #endif
