@@ -7,8 +7,8 @@
 
 	# define RED 0x00FF0000
 	# define MAX_FILE_SIZE 4096
-	# define TILE_WIDTH 22
-	# define TILE_HEIGHT 11
+	# define TILE_WIDTH 30
+	# define TILE_HEIGHT 15
 
 	typedef struct  s_img
 	{
@@ -56,13 +56,13 @@
 		int		lines;
 	}				t_map;
 
-	typedef struct	s_data
+	typedef struct	s_position
 	{
-		t_img	*img;
-		t_line	*line;
-		t_tile	*tile;
-		t_map	*map;
-	}				t_data;
+		int	i;
+		int	j;
+		int	i2;
+		int	j2;
+	}				t_position;
 
 	//print an error message and exit program
 	void	error_exit(char *error_message);
@@ -81,8 +81,9 @@
 	void	draw_map(t_img *img, char *map);
 	int		get_map_columns(char *map);
 	int		get_map_lines(char *map);
-	void	draw_isometric_line(t_img *img, t_line line, t_map *map);
+	void	draw_isometric_line(t_img *img, t_map *map, t_position position);
 	void	put_isometric_pixel(t_img *img, int x, int y, t_map *map);
+	int		get_depth(int x, int y, t_map *map);
 	
 	//pass the line and column as argument
 	//and the function will return the number of that location

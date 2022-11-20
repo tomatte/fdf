@@ -21,6 +21,18 @@ static t_map	get_map_values(char *map_str)
 	return (map);
 }
 
+
+static t_position	new_position(int i, int j, int i2, int j2)
+{
+	t_position	position;
+
+	position.i = i;
+	position.j = j;
+	position.i2 = i2;
+	position.j2 = j2;
+	return (position);
+}
+
 static void	draw_y(t_img *img, t_map *map)
 {
 	int	i;
@@ -32,7 +44,7 @@ static void	draw_y(t_img *img, t_map *map)
 		j = -1;
 		while (++j < map->columns)
 		{
-			draw_isometric_line(img, new_line(i, j, i + 1, j), map);
+			draw_isometric_line(img, map, new_position(i, j, i + 1, j));
 		}
 	}
 }
@@ -49,7 +61,7 @@ static void	draw_x(t_img *img, t_map *map)
 		j = -1;
 		while (++j < map->columns - 1)
 		{
-			draw_isometric_line(img, new_line(i, j, i, j + 1), map);
+			draw_isometric_line(img, map, new_position(i, j, i, j + 1));
 		}
 	}
 }
