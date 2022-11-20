@@ -41,16 +41,10 @@ static void	argv_validation(int argc, char **argv)
     }
 }
 
-/* --- PLANNING ---
- (COMPLETED) - read full map and store it as a string
- - create A get_word(int line, int word, char *text) function
-	* lines are separated by line-breaks and words by spaces
-	* just use this logic to create the function 
- - validate map values using this string
- example: get_map_value(0, 1) will return the second column of the first line
- obs: lines are separated by line breaks and columns by spaces
- - use this function to draw the map
- */
+void	start_hooks(t_img *img)
+{
+	close_window(img);
+}
 
 int main(int argc, char **argv)
 {
@@ -61,6 +55,7 @@ int main(int argc, char **argv)
 	img = new_image(1080, 720, "Land");
 	map = get_map(argv[1]);
 	draw_map(&img, map);
+	start_hooks(&img);
 	render_image(&img);
     return (0);
 }

@@ -9,6 +9,11 @@
 	# define MAX_FILE_SIZE 4096
 	# define TILE_WIDTH 30
 	# define TILE_HEIGHT 15
+	
+	//KEY_CODES
+	# define ESC 65307
+	# define MINUS 45
+	# define PLUS 61
 
 	typedef struct  s_img
 	{
@@ -95,5 +100,8 @@
 	//color
 	int	get_color(int line, int column, char *text);
 	int	ft_hextoi(char *hex);
+
+	//hooks
+	void	close_window(t_img *img);
 
 #endif
