@@ -2,7 +2,7 @@
 
 static int	close_esc(int key_code, t_img *img)
 {
-	if (key_code == ESC)
+	if (key_code == ESC_KEY)
 		mlx_destroy_window(img->mlx, img->window);
 	ft_printf("\nWindow closed\n");
 	return (0);

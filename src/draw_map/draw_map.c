@@ -74,8 +74,8 @@ void	draw_map(t_img *img, char *map_str)
 
 	
 	map = get_map_values(map_str);
-	ft_printf("columns: %d\n", map.columns);
-	ft_printf("lines: %d\n", map.lines);
+	//ft_printf("columns: %d\n", map.columns);
+	//ft_printf("lines: %d\n", map.lines);
 	draw_x(img, &map);
 	draw_y(img, &map);
 }

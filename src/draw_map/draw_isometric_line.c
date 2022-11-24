@@ -6,7 +6,6 @@ static int	get_pixel_x(t_img *img, int i, int j)
 
 	pixel_x = (j - i) * (TILE_WIDTH / 2);
 	pixel_x += img->width / 2;
-	//ft_printf("pixel_x: %d\n", pixel_x);
 	return (pixel_x);
 }
 
@@ -20,7 +19,6 @@ static int	get_pixel_y(t_img *img, int i, int j, t_map *map)
 	map_height = (map->columns + map->lines) * (TILE_HEIGHT / 2);
 	centralize_map = (img->height / 2) - (map_height / 2);
 	pixel_y += centralize_map;
-	//ft_printf("pixel_y: %d\n", pixel_y);
 	return (pixel_y);
 }
 

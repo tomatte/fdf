@@ -7,19 +7,23 @@
 
 	# define RED 0x00FF0000
 	# define MAX_FILE_SIZE 4096
-	# define TILE_WIDTH 30
-	# define TILE_HEIGHT 15
+	# define WINDOW_WIDTH 1280
+	# define WINDOW_HEIGHT 720
+	# define TILE_WIDTH 40
+	# define TILE_HEIGHT 35
 	
 	//KEY_CODES
-	# define ESC 65307
-	# define MINUS 45
-	# define PLUS 61
+	# define ESC_KEY 65307
+	# define MINUS_KEY 45
+	# define PLUS_KEY 61
 
 	typedef struct  s_img
 	{
 		void    *mlx;
 		void    *window;
 		void	*img;
+		char	*map;
+		int		proportion;
 		int     width;
 		int     height;
 		int		bpp;
@@ -88,7 +92,8 @@
 	int		get_map_lines(char *map);
 	void	draw_isometric_line(t_img *img, t_map *map, t_position position);
 	void	put_isometric_pixel(t_img *img, int x, int y, t_map *map);
-	int		get_depth(int x, int y, t_map *map);
+	int	get_depth(int x, int y, t_map *map, int proportion);
+	void	change_depth(t_img *img);
 	
 	//pass the line and column as argument
 	//and the function will return the number of that location
@@ -104,4 +109,6 @@
 	//hooks
 	void	close_window(t_img *img);
 
+	//image
+	void	render_image(t_img *img);
 #endif

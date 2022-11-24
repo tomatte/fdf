@@ -16,6 +16,7 @@ SRC			=	./src/fdf.c \
 				./src/others/ft_hextoi.c \
 				./src/others/get_color.c \
 				./src/hooks/close_window.c \
+				./src/hooks/change_depth.c \
 
 H_SRC		=	./src/fdf.h ./libft/libftprintf.h
 

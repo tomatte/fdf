@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
+/*   Updated: 2022/11/23 20:23:01 by dbrandao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
 static t_img	new_image(int width, int height, char *title)
 {
 	t_img	img;
 
+	img.proportion = TILE_HEIGHT >> 1;
 	img.width = width;
 	img.height = height;
 	img.mlx = mlx_init();
@@ -13,12 +26,9 @@ static t_img	new_image(int width, int height, char *title)
 	return img;
 }
 
-static void	render_image(t_img *img)
+void	render_image(t_img *img)
 {
     mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
-	ft_printf("rendering map...");
-    mlx_loop(img->mlx);
-	ft_printf("program ended.\n");
 }
 
 static void	argv_validation(int argc, char **argv)
@@ -41,9 +51,10 @@ static void	argv_validation(int argc, char **argv)
     }
 }
 
-void	start_hooks(t_img *img)
+static void	start_hooks(t_img *img)
 {
 	close_window(img);
+	change_depth(img);
 }
 
 int main(int argc, char **argv)
@@ -52,10 +63,12 @@ int main(int argc, char **argv)
 	char	*map;
 
 	argv_validation(argc, argv);
-	img = new_image(1080, 720, "Land");
+	img = new_image(WINDOW_WIDTH, WINDOW_HEIGHT, "Isometrics");
 	map = get_map(argv[1]);
+	img.map = map;
 	draw_map(&img, map);
 	start_hooks(&img);
 	render_image(&img);
+    mlx_loop(img.mlx);
     return (0);
 }
