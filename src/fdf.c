@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
-/*   Updated: 2022/11/23 20:23:01 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/11/23 21:54:31 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,3 +72,9 @@ int main(int argc, char **argv)
     mlx_loop(img.mlx);
     return (0);
 }
+
+/* 
+TO-DO:
+ -por map dentro de MAP
+ -calcular tamanho do map automaticamente 
+ */

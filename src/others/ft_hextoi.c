@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hextoi.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/26 14:16:36 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/11/26 14:16:45 by dbrandao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../fdf.h"
-//tested!!!
+
 static int	ft_pow(int num, int power)
 {
 	int	i;
@@ -56,39 +68,3 @@ int	ft_hextoi(char *hex)
 		}
 	return (number);
 }
-
-
-
-// int	main(void)
-// {
-// 	ft_printf("expected: 0 // got: %d\n", ft_hextoi("0x0"));
-// 	ft_printf("expected: 16 // got: %d\n", ft_hextoi("0x10"));
-// 	ft_printf("expected: 15 // got: %d\n", ft_hextoi("0xf"));
-// 	ft_printf("expected: 14 // got: %d\n", ft_hextoi("0xe"));
-// 	ft_printf("expected: 13 // got: %d\n", ft_hextoi("0xd"));
-// 	ft_printf("expected: 12 // got: %d\n", ft_hextoi("0xc"));
-// 	ft_printf("expected: 11 // got: %d\n", ft_hextoi("0xb"));
-// 	ft_printf("expected: 10 // got: %d\n", ft_hextoi("0xa"));
-// 	ft_printf("expected: 2730 // got: %d\n", ft_hextoi("0XaAa"));
-// 	ft_printf("expected: -1 // got: %d\n", ft_hextoi("-aaA"));
-// 	ft_printf("expected: 3003 // got: %d\n", ft_hextoi("0xbbb"));
-// // 	ft_printf("expected: -3003 // got: %d\n", ft_hex_to_int("-bbb"));
-// // 	ft_printf("expected: 3276 // got: %d\n", ft_hex_to_int("ccc"));
-// // 	ft_printf("expected: -3276 // got: %d\n", ft_hex_to_int("-ccc"));
-// // 	ft_printf("expected: 3549 // got: %d\n", ft_hex_to_int("Ddd"));
-// // 	ft_printf("expected: -3549 // got: %d\n", ft_hex_to_int("-ddd"));
-// // 	ft_printf("expected: 3822 // got: %d\n", ft_hex_to_int("eee"));
-// // 	ft_printf("expected: -3822 // got: %d\n", ft_hex_to_int("-eEe"));
-// // 	ft_printf("expected: 4095 // got: %d\n", ft_hex_to_int("fff"));
-// // 	ft_printf("expected: -4095 // got: %d\n", ft_hex_to_int("-fff"));
-// // 	ft_printf("expected: 2748 // got: %d\n", ft_hex_to_int("abc"));
-// // 	ft_printf("expected: -2748 // got: %d\n", ft_hex_to_int("-abc"));
-// // 	ft_printf("expected: 11259375 // got: %d\n", ft_hex_to_int("abcdef"));
-// // 	ft_printf("expected: -11259375 // got: %d\n", ft_hex_to_int("-aBcdef"));
-// // 	ft_printf("expected: 0 // got: %d\n", ft_hex_to_int("-xabcdef"));
-// 	ft_printf("expected: -1 // got: %d\n", ft_hextoi("-0x9"));
-// 	ft_printf("expected: 9 // got: %d\n", ft_hextoi("0x9"));
-// 	ft_printf("expected: 11259375 // got: %d\n", ft_hextoi("0xabcDEF"));
-// 	ft_printf("expected: 5: %d\n", ft_hextoi("0x5"));
-// 	return (0);
-// }

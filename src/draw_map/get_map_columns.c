@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_map_columns.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/26 14:15:16 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/11/26 14:15:17 by dbrandao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../fdf.h"
 
 static void	move_spaces(char **str)
@@ -27,7 +39,9 @@ int	get_map_columns(char *map)
 	{
 		move_chars(&map);
 		move_spaces(&map);
-		if (!ft_isalnum(*map))
+		if (*map == '-')
+			map++;
+		if (!ft_isdigit(*map))
 			return (columns);
 		columns++;
 	}

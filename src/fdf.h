@@ -6,6 +6,7 @@
 	#include <fcntl.h>
 
 	# define RED 0x00FF0000
+	# define DEFAULT_COLOR 0x000000FF
 	# define MAX_FILE_SIZE 4096
 	# define WINDOW_WIDTH 1280
 	# define WINDOW_HEIGHT 720
@@ -63,6 +64,8 @@
 		char	*map;
 		int		columns;
 		int		lines;
+		int		tile_width;
+		int		tile_height;
 	}				t_map;
 
 	typedef struct	s_position
@@ -92,7 +95,7 @@
 	int		get_map_lines(char *map);
 	void	draw_isometric_line(t_img *img, t_map *map, t_position position);
 	void	put_isometric_pixel(t_img *img, int x, int y, t_map *map);
-	int	get_depth(int x, int y, t_map *map, int proportion);
+	int	get_depth(int x, int y, t_map *map, t_img *img);
 	void	change_depth(t_img *img);
 	
 	//pass the line and column as argument

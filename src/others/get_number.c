@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_number.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/26 14:17:00 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/11/26 14:17:06 by dbrandao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../fdf.h"
 
 static void	move_lines(char **text, int lines)
@@ -54,4 +66,3 @@ int	get_number(int line, int column, char *text)
 		return (0);
 	return (ft_atoi(text));
 }
-

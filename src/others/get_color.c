@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_color.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/26 14:16:53 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/11/26 14:16:55 by dbrandao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../fdf.h"
 
 static void	move_lines(char **text, int lines)
@@ -62,13 +74,13 @@ int	get_color(int line, int column, char *text)
 	int	color;
 
 	if (!text || line < 0 || column < 0)
-		return (RED);
+		return (DEFAULT_COLOR);
 	move_lines(&text, line);
 	move_columns(&text, column);
 	if (!text)
-		return (RED);
+		return (DEFAULT_COLOR);
 	color = get_hexa_from_text(text);
 	if (color < 0)
-		return (RED);
+		return (DEFAULT_COLOR);
 	return (color);
 }

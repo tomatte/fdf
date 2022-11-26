@@ -1,15 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/25 14:51:25 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/11/25 15:20:10 by dbrandao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../fdf.h"
-
-static t_line	new_line(int x, int y, int x2, int y2)
-{
-	t_line	line;
-
-	line.x = x;
-	line.y = y;
-	line.x2 = x2;
-	line.y2 = y2;
-	return (line);
-}
 
 static t_map	get_map_values(char *map_str)
 {
@@ -66,16 +67,35 @@ static void	draw_x(t_img *img, t_map *map)
 	}
 }
 
+void	calculate_tile_size(t_img *img, t_map *map)
+{
+	int	width;
+
+	width = 2;
+	while (1)
+	{
+		if (((width + 2) * map->columns) < img->width - 400
+			&& ((width + 2) / 2) * map->lines < img->width - 400)
+			width += 2;
+		else
+			break ;
+	}
+	map->tile_width = width;
+	map->tile_height = width / 2;
+}
+
 
 void	draw_map(t_img *img, char *map_str)
 {
 	t_map	map;
 	t_line	line;
 
-	
 	map = get_map_values(map_str);
-	//ft_printf("columns: %d\n", map.columns);
-	//ft_printf("lines: %d\n", map.lines);
+	calculate_tile_size(img, &map);
+	ft_printf("tile_width: %d\n", map.tile_width);
+	ft_printf("tile_height: %d\n", map.tile_height);
+	ft_printf("columns: %d\n", map.columns);
+	ft_printf("lines: %d\n", map.lines);
 	draw_x(img, &map);
 	draw_y(img, &map);
 }
