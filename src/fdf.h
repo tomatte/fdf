@@ -133,6 +133,5 @@
 	//dot functions
 	void	get_first(t_dot **dots, t_dot **first, t_dot **current, t_dot **up, char **map);
 	void	get_next(t_dot **current, t_dot **up, char **map);
-	void	get_up_down(t_dot **current, t_dot **up);
 	void	*new_dot(char **map);
 #endif
