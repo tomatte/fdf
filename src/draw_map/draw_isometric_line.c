@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:50 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/28 12:06:14 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/11/28 12:13:38 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,14 @@ ft_printf("position depth: %d\n", position.depth);
 ft_printf("position color2: %d\n", position.color2);
 ft_printf("position depth2: %d\n", position.depth2);
  */
-/* 	line.color = get_color(position.i, position.j, map->map);
+	line.color = position.color;
 	if (line.color == DEFAULT_COLOR)
-		line.color = get_color(position.i2, position.j2, map->map);
+		line.color = position.color2;
 	line.x = get_pixel_x(img, position.i, position.j, map);
 	line.y = get_pixel_y(img, position.i, position.j, map);
 	line.x2 = get_pixel_x(img, position.i2, position.j2, map);
 	line.y2 = get_pixel_y(img, position.i2, position.j2, map);
-	line.y -= get_depth(position.i, position.j, map, img);
-	line.y2 -= get_depth(position.i2, position.j2, map, img); */
+	line.y -= get_depth(position.depth, map, img);
+	line.y2 -= get_depth(position.depth2, map, img);
 	draw_line(img, line);
 }

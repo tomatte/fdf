@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:25 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/28 12:02:18 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/11/28 12:27:05 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,10 @@ void	draw_map(t_img *img, char *map_str)
 	ft_printf("columns: %d\n", map.columns);
 	ft_printf("lines: %d\n", map.lines);
 	calculate_tile_size(img, &map);
+	map.tile_width = 4;
+	map.tile_height = 2;
+	ft_printf("width: %d\n", map.tile_width);
+	ft_printf("height: %d\n", map.tile_height);
 	dots = get_map_values(map.map);
 	drawing(img, &map, dots);
 }
