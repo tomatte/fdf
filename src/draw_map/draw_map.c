@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:25 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/28 12:27:05 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/11/28 13:07:14 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,11 @@ static t_map	fill_map(char *map_str)
 	return (map);
 }
 
-
-static t_position	new_position(int i, int j, int i2, int j2)
-{
-	t_position	position;
-
-	position.i = i;
-	position.j = j;
-	position.i2 = i2;
-	position.j2 = j2;
-	return (position);
-}
-
 void	calculate_tile_size(t_img *img, t_map *map)
 {
 	int	width;
 
-	width = 2;
+	width = 4;
 	while (1)
 	{
 		if (((width + 2) * map->columns) < img->width - 400
@@ -47,6 +35,17 @@ void	calculate_tile_size(t_img *img, t_map *map)
 		else
 			break ;
 	}
+	if (width == 4)
+	{
+		while ((width * map->columns) > img->width - 400
+			|| (width / 2) * map->lines > img->width - 400)
+		{
+			img->width += 2;
+			img->height += 2;
+		}
+	}
+	ft_printf("IMAGE WIDTH: %d\n", img->width);
+	ft_printf("IMAGE HEIGHT: %d\n", img->height);
 	map->tile_width = width;
 	map->tile_height = width / 2;
 }
@@ -114,8 +113,6 @@ void	draw_map(t_img *img, char *map_str)
 	ft_printf("columns: %d\n", map.columns);
 	ft_printf("lines: %d\n", map.lines);
 	calculate_tile_size(img, &map);
-	map.tile_width = 4;
-	map.tile_height = 2;
 	ft_printf("width: %d\n", map.tile_width);
 	ft_printf("height: %d\n", map.tile_height);
 	dots = get_map_values(map.map);
