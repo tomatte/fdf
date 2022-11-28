@@ -76,6 +76,16 @@
 		int	j2;
 	}				t_position;
 
+	// ---- new structure ----
+	typedef struct	s_dot
+	{
+		int		depth;
+		int		color;
+		void	*front;
+		void	*down;
+	}				t_dot;
+	//------------------------
+
 	//print an error message and exit program
 	void	error_exit(char *error_message);
 
@@ -114,4 +124,15 @@
 
 	//image
 	void	render_image(t_img *img);
+
+	//ft_hextoi modified to walk with pointer
+	int	ft_hextoi_mod(char **hex);
+
+	int	ft_atoi_mod(char **nptr);
+
+	//dot functions
+	void	get_first(t_dot **dots, t_dot **first, t_dot **current, t_dot **up, char **map);
+	void	get_next(t_dot **current, t_dot **up, char **map);
+	void	get_up_down(t_dot **current, t_dot **up);
+	void	*new_dot(char **map);
 #endif
