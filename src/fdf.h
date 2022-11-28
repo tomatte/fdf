@@ -72,8 +72,12 @@
 	{
 		int	i;
 		int	j;
+		int	depth;
+		int	color;
 		int	i2;
 		int	j2;
+		int	depth2;
+		int	color2;
 	}				t_position;
 
 	// ---- new structure ----
@@ -105,7 +109,7 @@
 	int		get_map_lines(char *map);
 	void	draw_isometric_line(t_img *img, t_map *map, t_position position);
 	void	put_isometric_pixel(t_img *img, int x, int y, t_map *map);
-	int	get_depth(int x, int y, t_map *map, t_img *img);
+	int		get_depth(int x, int y, t_map *map, t_img *img);
 	void	change_depth(t_img *img);
 	
 	//pass the line and column as argument
@@ -134,4 +138,5 @@
 	void	get_first(t_dot **dots, t_dot **first, t_dot **current, t_dot **up, char **map);
 	void	get_next(t_dot **current, t_dot **up, char **map);
 	void	*new_dot(char **map);
+	t_dot	*get_map_values(char *map);
 #endif

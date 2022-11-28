@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:50 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/26 14:13:28 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/11/28 12:06:14 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,14 @@ void	draw_isometric_line(t_img *img, t_map *map, t_position position)
 {
 	t_line	line;
 
-	line.color = get_color(position.i, position.j, map->map);
+/* ft_printf("i: %d\n", position.i2);
+ft_printf("j: %d\n", position.j2); */
+/* ft_printf("position color: %d\n", position.color);
+ft_printf("position depth: %d\n", position.depth);
+ft_printf("position color2: %d\n", position.color2);
+ft_printf("position depth2: %d\n", position.depth2);
+ */
+/* 	line.color = get_color(position.i, position.j, map->map);
 	if (line.color == DEFAULT_COLOR)
 		line.color = get_color(position.i2, position.j2, map->map);
 	line.x = get_pixel_x(img, position.i, position.j, map);
@@ -56,6 +63,6 @@ void	draw_isometric_line(t_img *img, t_map *map, t_position position)
 	line.x2 = get_pixel_x(img, position.i2, position.j2, map);
 	line.y2 = get_pixel_y(img, position.i2, position.j2, map);
 	line.y -= get_depth(position.i, position.j, map, img);
-	line.y2 -= get_depth(position.i2, position.j2, map, img);
+	line.y2 -= get_depth(position.i2, position.j2, map, img); */
 	draw_line(img, line);
 }
