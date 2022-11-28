@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:25 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/28 13:07:14 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/11/28 17:53:08 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	calculate_tile_size(t_img *img, t_map *map)
 		while ((width * map->columns) > img->width - 400
 			|| (width / 2) * map->lines > img->width - 400)
 		{
-			img->width += 2;
-			img->height += 2;
+			img->width += 21;
+			img->height += 9;
 		}
 	}
 	ft_printf("IMAGE WIDTH: %d\n", img->width);
@@ -86,12 +86,10 @@ void	drawing(t_img *img, t_map *map, t_dot *dots)
 	while (current)
 	{
 		if (current->front)
-		{
 			draw_isometric_line(img, map, pos_front(pos, current));
-			pos.j++;
-		}	
 		if (current->down)
 			draw_isometric_line(img, map, pos_down(pos, current));
+		pos.j++;
 		current = (t_dot *) current->front;
 		if (!current)
 		{
