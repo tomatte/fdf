@@ -6,29 +6,26 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
-/*   Updated: 2022/11/26 14:25:26 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:36:58 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static t_img	new_image(int width, int height, char *title)
+static t_img	new_image(char *map, char *title)
 {
 	t_img	img;
 
+	img.map = map;
 	img.proportion = TILE_HEIGHT >> 1;
-	img.width = width;
-	img.height = height;
+	img.width = WINDOW_WIDTH;
+	img.height = WINDOW_HEIGHT;
+	window_minimum_size(&img);
 	img.mlx = mlx_init();
-	img.window = mlx_new_window(img.mlx, width, height, title);
+	img.window = mlx_new_window(img.mlx, img.width, img.height, title);
 	img.img = mlx_new_image(img.mlx, img.width, img.height);
 	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length, &img.endian);
 	return img;
-}
-
-void	render_image(t_img *img)
-{
-    mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
 }
 
 static void	argv_validation(int argc, char **argv)
@@ -63,12 +60,11 @@ int main(int argc, char **argv)
 	char	*map;
 
 	argv_validation(argc, argv);
-	img = new_image(WINDOW_WIDTH, WINDOW_HEIGHT, "Isometrics");
 	map = get_map(argv[1]);
-	img.map = map;
+	img = new_image(map, "Isometrics");
 	draw_map(&img, map);
 	start_hooks(&img);
-	render_image(&img);
+	mlx_put_image_to_window(img.mlx, img.window, img.img, 0, 0);
     mlx_loop(img.mlx);
     return (0);
 }

@@ -21,6 +21,7 @@ SRC			=	./src/fdf.c \
 				./src/get_map/ft_atoi_mod.c \
 				./src/get_map/dot_functions.c \
 				./src/get_map/get_map_values.c \
+				./src/others/window_minimum_size.c \
 
 H_SRC		=	./src/fdf.h ./libft/libftprintf.h
 

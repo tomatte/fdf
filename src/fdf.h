@@ -1,6 +1,5 @@
 #ifndef FDF_H
 # define FDF_H
-
 	#include <mlx.h>
 	#include "../libft/libftprintf.h"
 	#include <fcntl.h>
@@ -8,8 +7,8 @@
 	# define RED 0x00FF0000
 	# define DEFAULT_COLOR 0x000000FF
 	# define MAX_FILE_SIZE 4096
-	# define WINDOW_WIDTH 1720
-	# define WINDOW_HEIGHT 1260
+	# define WINDOW_WIDTH 1366
+	# define WINDOW_HEIGHT 768
 	# define TILE_WIDTH 40
 	# define TILE_HEIGHT 35
 	
@@ -127,7 +126,7 @@
 	void	close_window(t_img *img);
 
 	//image
-	void	render_image(t_img *img);
+	void	window_minimum_size(t_img *img);
 
 	//ft_hextoi modified to walk with pointer
 	int	ft_hextoi_mod(char **hex);

@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:33:30 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/23 21:47:39 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/11/28 17:28:25 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	change(int key_code, t_img *img)
 	img->proportion = proportion;;
 	draw_map(img, img->map);
 	mlx_destroy_image(img->mlx, old_img);
-	render_image(img);
+	mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
 }
 
 void	change_depth(t_img *img)

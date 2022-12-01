@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:25 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/28 17:53:08 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/11/30 23:45:13 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,6 @@ void	calculate_tile_size(t_img *img, t_map *map)
 			width += 2;
 		else
 			break ;
-	}
-	if (width == 4)
-	{
-		while ((width * map->columns) > img->width - 400
-			|| (width / 2) * map->lines > img->width - 400)
-		{
-			img->width += 21;
-			img->height += 9;
-		}
 	}
 	ft_printf("IMAGE WIDTH: %d\n", img->width);
 	ft_printf("IMAGE HEIGHT: %d\n", img->height);
