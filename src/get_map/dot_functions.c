@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:51:06 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/05 23:30:38 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 00:01:10 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	*new_dot(char **map)
 	return (dot);
 }
 
-void	get_first(t_dot **dots, t_dot **first, t_dot **current, t_dot **up, char **map)
+void	get_first(t_dot **dots, t_dot **first, t_dot **current, char **map)
 {
 	if (!*dots)
 	{
@@ -48,7 +48,11 @@ void	get_first(t_dot **dots, t_dot **first, t_dot **current, t_dot **up, char **
 		*first = *dots;
 		*current = *first;
 	}
-	else if (is_new_line(map))
+}
+
+void	next_line(t_dot **first, t_dot **current, t_dot **up, char **map)
+{
+	if (is_new_line(map))
 	{
 		*up = *first;
 		*current = new_dot(map);
@@ -57,7 +61,7 @@ void	get_first(t_dot **dots, t_dot **first, t_dot **current, t_dot **up, char **
 	}
 }
 
-void	get_next(t_dot **current, t_dot **up, char **map)
+void	get_next_dot(t_dot **current, t_dot **up, char **map)
 {
 	(*current)->front = new_dot(map);
 	*current = (*current)->front;

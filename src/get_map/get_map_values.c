@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:04:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/05 23:25:54 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 00:02:28 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ t_dot	*get_map_values(char *map)
 	dots = NULL;
 	while (*map)
 	{
-		get_first(&dots, &first, &current, &up, &map);
-		get_next(&current, &up, &map);
+		get_first(&dots, &first, &current, &map);
+		next_line(&first, &current, &up, &map);
+		get_next_dot(&current, &up, &map);
 		if (!current)
 			break ;
 	}

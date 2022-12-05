@@ -134,9 +134,10 @@
 	int	ft_atoi_mod(char **nptr);
 
 	//dot functions
-	void	get_first(t_dot **dots, t_dot **first, t_dot **current, t_dot **up, char **map);
-	void	get_next(t_dot **current, t_dot **up, char **map);
+	void	get_first(t_dot **dots, t_dot **first, t_dot **current, char **map);
+	void	get_next_dot(t_dot **current, t_dot **up, char **map);
 	t_dot	*get_map_values(char *map);
+	void	next_line(t_dot **first, t_dot **current, t_dot **up, char **map);
 
 	int	extract_color(char **map);
 #endif
