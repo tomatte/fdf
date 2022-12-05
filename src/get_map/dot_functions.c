@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:51:06 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/02 08:59:19 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:30:38 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,6 @@ static int	is_new_line(char **map)
 			(*map)++;
 	}
 	return (0);
-}
-
-static int	extract_color(char **map)
-{
-	int	color;
-
-	if (**map == ',')
-		(*map)++;
-	else
-		return (DEFAULT_COLOR);
-	color = ft_hextoi_mod(map);
-	return (color);
 }
 
 static void	*new_dot(char **map)

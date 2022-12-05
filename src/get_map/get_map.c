@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:15:26 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/26 17:56:12 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:24:57 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	remove_border_spaces(char **str)
 	mem_clear((void *) &aux);
 }
 
-char    *get_map(char *file_name)
+char	*get_map(char *file_name)
 {
 	char	*map;
 	int		fd;

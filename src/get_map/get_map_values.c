@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:04:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/28 00:04:11 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:25:54 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,9 @@ int	main(int argc, char **argv)
 	return (0);
 }
  */
-//gcc map_struct.c read_file.c ../others/error_exit.c ../others/mem_clear.c ./get_map.c ../../libft/libftprintf.a
-
-
-
+/*gcc map_struct.c read_file.c ../others/error_exit.c
+../others/mem_clear.c ./get_map.c ../../libft/libftprintf.a
+*/
 /* 
 	var a;
 	var up;

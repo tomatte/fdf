@@ -137,5 +137,6 @@
 	void	get_first(t_dot **dots, t_dot **first, t_dot **current, t_dot **up, char **map);
 	void	get_next(t_dot **current, t_dot **up, char **map);
 	t_dot	*get_map_values(char *map);
-	t_list	get_coordinates(char *map);
+
+	int	extract_color(char **map);
 #endif

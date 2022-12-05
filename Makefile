@@ -22,7 +22,7 @@ SRC			=	./src/fdf.c \
 				./src/get_map/dot_functions.c \
 				./src/get_map/get_map_values.c \
 				./src/others/window_minimum_size.c \
-				./src/get_map/get_coordinates.c \
+				./src/get_map/extract_color.c \
 
 H_SRC		=	./src/fdf.h ./libft/libftprintf.h
 
