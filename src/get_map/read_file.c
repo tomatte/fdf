@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:15:34 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/26 14:15:34 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 00:08:06 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static char	*join_and_free(char *s1, char *s2)
 
 char	*read_file(int fd)
 {
-	char    *map;
+	char	*map;
 	char	*aux;
 
 	map = NULL;
@@ -36,7 +36,7 @@ char	*read_file(int fd)
 	{
 		aux = get_next_line(fd);
 		if (!aux)
-			return map;
+			return (map);
 		map = join_and_free(map, aux);
 	}
 }
