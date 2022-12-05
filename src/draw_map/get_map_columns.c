@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:15:16 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/26 14:15:17 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 00:20:29 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	move_chars(char **str)
 {
 	if (!*str)
 		return ;
-	while (**str && **str != ' ' &&  **str != '\t' && **str != '\n')
+	while (**str && **str != ' ' && **str != '\t' && **str != '\n')
 		(*str)++;
 }
 
