@@ -136,6 +136,6 @@
 	//dot functions
 	void	get_first(t_dot **dots, t_dot **first, t_dot **current, t_dot **up, char **map);
 	void	get_next(t_dot **current, t_dot **up, char **map);
-	void	*new_dot(char **map);
 	t_dot	*get_map_values(char *map);
+	t_list	get_coordinates(char *map);
 #endif

@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:51:06 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/27 23:58:56 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/02 08:59:19 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	extract_color(char **map)
 	return (color);
 }
 
-void	*new_dot(char **map)
+static void	*new_dot(char **map)
 {
 	t_dot	*dot;
 
