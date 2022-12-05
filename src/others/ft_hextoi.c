@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:16:36 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/26 14:16:45 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:15:46 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,6 @@ int	ft_hextoi(char *hex)
 	number = 0;
 	i = 0;
 	while (hex_char_to_int(*(--hex)) >= 0)
-		{	
-			number += hex_char_to_int(*hex) * ft_pow(16, i++);
-		}
+		number += hex_char_to_int(*hex) * ft_pow(16, i++);
 	return (number);
 }
