@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:25 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/30 23:45:13 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 00:16:36 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,7 @@ static t_map	fill_map(char *map_str)
 	return (map);
 }
 
-void	calculate_tile_size(t_img *img, t_map *map)
-{
-	int	width;
-
-	width = 4;
-	while (1)
-	{
-		if (((width + 2) * map->columns) < img->width - 400
-			&& ((width + 2) / 2) * map->lines < img->width - 400)
-			width += 2;
-		else
-			break ;
-	}
-	ft_printf("IMAGE WIDTH: %d\n", img->width);
-	ft_printf("IMAGE HEIGHT: %d\n", img->height);
-	map->tile_width = width;
-	map->tile_height = width / 2;
-}
-
-t_position	pos_front(t_position pos, t_dot *dot) 
+t_position	pos_front(t_position pos, t_dot *dot)
 {
 	pos.i2 = pos.i;
 	pos.j2 = pos.j + 1;
@@ -52,7 +33,7 @@ t_position	pos_front(t_position pos, t_dot *dot)
 	return (pos);
 }
 
-t_position	pos_down(t_position pos, t_dot *dot) 
+t_position	pos_down(t_position pos, t_dot *dot)
 {
 	pos.i2 = pos.i + 1;
 	pos.j2 = pos.j;
@@ -62,7 +43,6 @@ t_position	pos_down(t_position pos, t_dot *dot)
 	pos.color2 = ((t_dot *) dot->down)->color;
 	return (pos);
 }
-
 
 void	drawing(t_img *img, t_map *map, t_dot *dots)
 {

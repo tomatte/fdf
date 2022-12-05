@@ -110,6 +110,7 @@
 	void	put_isometric_pixel(t_img *img, int x, int y, t_map *map);
 	int		get_depth(int depth, t_map *map, t_img *img);
 	void	change_depth(t_img *img);
+	void	calculate_tile_size(t_img *img, t_map *map);
 	
 	//pass the line and column as argument
 	//and the function will return the number of that location

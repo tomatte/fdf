@@ -23,6 +23,7 @@ SRC			=	./src/fdf.c \
 				./src/get_map/get_map_values.c \
 				./src/others/window_minimum_size.c \
 				./src/get_map/extract_color.c \
+				./src/draw_map/calculate_tile_size.c \
 
 H_SRC		=	./src/fdf.h ./libft/libftprintf.h
 
