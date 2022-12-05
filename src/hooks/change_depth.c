@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:33:30 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/28 17:28:25 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:22:47 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	change(int key_code, t_img *img)
 {
 	static int	proportion = TILE_HEIGHT >> 1;
-	t_img	*old_img;
+	t_img		*old_img;
 
 	if (!(key_code == MINUS_KEY) && !(key_code == PLUS_KEY))
 		return (0);
@@ -25,7 +25,7 @@ static int	change(int key_code, t_img *img)
 		proportion--;
 	old_img = img->img;
 	img->img = mlx_new_image(img->mlx, img->width, img->height);
-	img->proportion = proportion;;
+	img->proportion = proportion;
 	draw_map(img, img->map);
 	mlx_destroy_image(img->mlx, old_img);
 	mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
