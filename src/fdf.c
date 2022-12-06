@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
-/*   Updated: 2022/12/06 12:47:53 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:14:49 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,8 @@ static void	argv_validation(int argc, char **argv)
 
 static void	start_hooks(t_img *img)
 {
+	mlx_key_hook(img->window, key_hooks, img);
 	close_window_x(img);
-	change_depth(img);
-	move_image(img);
 }
 
 int	main(int argc, char **argv)

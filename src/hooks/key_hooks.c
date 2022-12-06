@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_image.c                                       :+:      :+:    :+:   */
+/*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 11:20:49 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 12:25:09 by dbrandao         ###   ########.fr       */
+/*   Created: 2022/12/06 12:59:06 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/12/06 17:16:47 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
+
+static int	esc_close(int key_code, t_img *img)
+{
+	if (key_code == ESC_KEY)
+	{
+		ft_printf("Program closed.\n");
+		exit(0);
+	}
+	return (0);
+}
 
 static int	move_img(int key_code, t_img *img)
 {
@@ -33,7 +43,9 @@ static int	move_img(int key_code, t_img *img)
 	return (0);
 }
 
-void	move_image(t_img *img)
+int	key_hooks(int key_code, t_img *img)
 {
-	mlx_key_hook(img->window, move_img, img);
+	esc_close(key_code, img);
+	move_img(key_code, img);
+	return (0);
 }

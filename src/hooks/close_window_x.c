@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:15:41 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 12:46:53 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:17:36 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	close_x(t_img *img)
 {
 	mlx_destroy_window(img->mlx, img->window);
-	ft_printf("\nProgram closed\n");
+	ft_printf("\nProgram closed.\n");
 	exit(0);
 	return (0);
 }

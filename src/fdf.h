@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 12:47:14 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:13:00 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,8 @@ int		ft_hextoi(char *hex);
 //hooks
 void	close_window_x(t_img *img);
 void	move_image(t_img *img);
+void	close_window_esc(t_img *img);
+int		key_hooks(int key_code, t_img *img);
 
 //image
 void	window_minimum_size(t_img *img);
