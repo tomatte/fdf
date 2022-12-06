@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 11:54:49 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 12:47:14 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ int		get_color(int line, int column, char *text);
 int		ft_hextoi(char *hex);
 
 //hooks
-void	close_window(t_img *img);
+void	close_window_x(t_img *img);
 void	move_image(t_img *img);
 
 //image

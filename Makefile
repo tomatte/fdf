@@ -15,7 +15,7 @@ SRC			=	./src/fdf.c \
 				./src/draw_map/get_depth.c \
 				./src/others/ft_hextoi.c \
 				./src/others/get_color.c \
-				./src/hooks/close_window.c \
+				./src/hooks/close_window_x.c \
 				./src/hooks/change_depth.c \
 				./src/hooks/move_image.c \
 				./src/get_map/ft_hextoi_mod.c \
