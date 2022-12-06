@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 11:20:49 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 12:21:39 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 12:25:09 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ static int	move_img(int key_code, t_img *img)
 	int			num;
 
 	num = 30;
-	if (key_code == ARROW_UP && y >= num)
+	if (key_code == ARROW_UP)
 		y -= num;
-	else if (key_code == ARROW_LEFT && x >= num)
+	else if (key_code == ARROW_LEFT)
 		x -= num;
-	else if (key_code == ARROW_RIGHT && x + num <= img->width)
+	else if (key_code == ARROW_RIGHT)
 		x += num;
-	else if (key_code == ARROW_DOWN && y + num <= img->height)
+	else if (key_code == ARROW_DOWN)
 		y += num;
 	else
 		return (0);
