@@ -6,19 +6,18 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:25 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 00:16:36 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:11:27 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-static t_map	fill_map(char *map_str)
+static t_map	fill_map(t_dot	*dots)
 {
 	t_map	map;
 
-	map.map = map_str;
-	map.lines = get_map_lines(map.map);
-	map.columns = get_map_columns(map.map);
+	map.lines = get_map_lines(dots);
+	map.columns = get_map_columns(dots);
 	return (map);
 }
 
@@ -78,12 +77,11 @@ void	draw_map(t_img *img, char *map_str)
 	t_line	line;
 	t_dot	*dots;
 
-	map = fill_map(map_str);
+	map = fill_map(img->dots);
 	ft_printf("columns: %d\n", map.columns);
 	ft_printf("lines: %d\n", map.lines);
 	calculate_tile_size(img, &map);
 	ft_printf("width: %d\n", map.tile_width);
 	ft_printf("height: %d\n", map.tile_height);
-	dots = get_map_values(map.map);
-	drawing(img, &map, dots);
+	drawing(img, &map, img->dots);
 }

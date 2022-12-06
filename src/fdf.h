@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 17:30:43 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:09:03 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,6 @@
 # define ARROW_UP 65362
 # define ARROW_RIGHT 65363
 # define ARROW_DOWN 65364
-
-typedef struct s_img
-{
-	void	*mlx;
-	void	*window;
-	void	*img;
-	char	*map;
-	int		proportion;
-	int		width;
-	int		height;
-	int		bpp;
-	int		line_length;
-	int		endian;
-	char	*addr;
-}			t_img;
 
 typedef struct s_line
 {
@@ -73,7 +58,6 @@ typedef struct s_tile
 
 typedef struct s_map
 {
-	char	*map;
 	int		columns;
 	int		lines;
 	int		tile_width;
@@ -102,6 +86,22 @@ typedef struct s_dot
 }	t_dot;
 //------------------------
 
+typedef struct s_img
+{
+	void	*mlx;
+	void	*window;
+	void	*img;
+	char	*map;
+	t_dot	*dots;
+	int		proportion;
+	int		width;
+	int		height;
+	int		bpp;
+	int		line_length;
+	int		endian;
+	char	*addr;
+}			t_img;
+
 //print an error message and exit program
 void	error_exit(char *error_message);
 
@@ -117,8 +117,8 @@ char	*read_file(int fd);
 
 // --- DRAW_MAP --- //
 void	draw_map(t_img *img, char *map);
-int		get_map_columns(char *map);
-int		get_map_lines(char *map);
+int		get_map_columns(t_dot *dots);
+int		get_map_lines(t_dot *dots);
 void	draw_isometric_line(t_img *img, t_map *map, t_position position);
 void	put_isometric_pixel(t_img *img, int x, int y, t_map *map);
 int		get_depth(int depth, t_map *map, t_img *img);

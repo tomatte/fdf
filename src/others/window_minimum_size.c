@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 17:58:09 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/05 23:19:46 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:09:51 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	window_minimum_size(t_img *img)
 	int	tile_width;
 
 	tile_width = 4;
-	columns = get_map_columns(img->map);
-	lines = get_map_lines(img->map);
+	columns = get_map_columns(img->dots);
+	lines = get_map_lines(img->dots);
 	while ((tile_width * columns) > img->width - 400
 		|| (tile_width / 2) * lines > img->width - 400)
 	{

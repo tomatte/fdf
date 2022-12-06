@@ -6,25 +6,21 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:15:21 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/26 14:15:22 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:06:50 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-int	get_map_lines(char *map)
+int	get_map_lines(t_dot *dots)
 {
-	int	i;
+	int	lines;
 
-	if (!map)
-		error_exit("Map is NULL.\n");
-	i = 1;
-	while (1)
+	lines = 0;
+	while (dots)
 	{
-		map = ft_strchr(map, '\n');
-		if (!map || !*map)
-			return (i);
-		map++;
-		i++;
+		lines++;
+		dots = (t_dot *) dots->down;
 	}
+	return (lines);
 }
