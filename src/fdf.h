@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 18:09:03 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:16:30 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ char	*get_map(char *file_name);
 char	*read_file(int fd);
 
 // --- DRAW_MAP --- //
-void	draw_map(t_img *img, char *map);
+void	draw_map(t_img *img);
 int		get_map_columns(t_dot *dots);
 int		get_map_lines(t_dot *dots);
 void	draw_isometric_line(t_img *img, t_map *map, t_position position);

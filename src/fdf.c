@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
-/*   Updated: 2022/12/06 17:59:01 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:16:45 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(int argc, char **argv)
 	argv_validation(argc, argv);
 	map = get_map(argv[1]);
 	img = new_image(map, "Isometrics");
-	draw_map(&img, map);
+	draw_map(&img);
 	start_hooks(&img);
 	mlx_put_image_to_window(img.mlx, img.window, img.img, 0, 0);
 	mlx_loop(img.mlx);

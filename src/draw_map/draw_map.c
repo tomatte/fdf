@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:25 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 18:11:27 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:16:17 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	drawing(t_img *img, t_map *map, t_dot *dots)
 	}
 }
 
-void	draw_map(t_img *img, char *map_str)
+void	draw_map(t_img *img)
 {
 	t_map	map;
 	t_line	line;
