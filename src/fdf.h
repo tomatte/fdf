@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 14:59:58 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:54:49 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@
 # define ESC_KEY 65307
 # define MINUS_KEY 45
 # define PLUS_KEY 61
+# define ARROW_LEFT 65361
+# define ARROW_UP 65362
+# define ARROW_RIGHT 65363
+# define ARROW_DOWN 65364
 
 typedef struct s_img
 {
@@ -134,6 +138,7 @@ int		ft_hextoi(char *hex);
 
 //hooks
 void	close_window(t_img *img);
+void	move_image(t_img *img);
 
 //image
 void	window_minimum_size(t_img *img);

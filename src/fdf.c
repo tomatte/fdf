@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
-/*   Updated: 2022/12/06 00:11:54 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:50:42 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ static void	start_hooks(t_img *img)
 {
 	close_window(img);
 	change_depth(img);
+	move_image(img);
 }
 
 int	main(int argc, char **argv)
