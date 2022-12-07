@@ -6,55 +6,55 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:14:45 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 00:24:57 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:29:24 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-static void	initialize_line_struct(t_line *line_data)
+static void	initialize_line_struct(t_line *line)
 {
-	line_data->w = line_data->x2 - line_data->x;
-	line_data->h = line_data->y2 - line_data->y;
-	line_data->dx1 = 0;
-	line_data->dy1 = 0;
-	line_data->dx2 = 0;
-	line_data->dy2 = 0;
-	line_data->proportion = 0;
-	line_data->longest = ft_abs(line_data->w);
-	line_data->shortest = ft_abs(line_data->h);
+	line->w = line->x2 - line->x;
+	line->h = line->y2 - line->y;
+	line->dx1 = 0;
+	line->dy1 = 0;
+	line->dx2 = 0;
+	line->dy2 = 0;
+	line->proportion = 0;
+	line->longest = ft_abs(line->w);
+	line->shortest = ft_abs(line->h);
 }
 
-static void	decide_xy_direction(t_line *line_data)
+static void	decide_xy_direction(t_line *line)
 {
-	if (line_data->w < 0)
+	if (line->w < 0)
 	{
-		line_data->dx1 = -1;
-		line_data->dx2 = -1;
+		line->dx1 = -1;
+		line->dx2 = -1;
 	}
-	else if (line_data->w > 0)
+	else if (line->w > 0)
 	{
-		line_data->dx1 = 1;
-		line_data->dx2 = 1;
+		line->dx1 = 1;
+		line->dx2 = 1;
 	}
-	if (line_data->h < 0)
-		line_data->dy1 = -1;
-	else if (line_data->h > 0)
-		line_data->dy1 = 1;
-	if (line_data->longest <= line_data->shortest)
+	if (line->h < 0)
+		line->dy1 = -1;
+	else if (line->h > 0)
+		line->dy1 = 1;
+	if (line->longest <= line->shortest)
 	{
-		line_data->longest = ft_abs(line_data->h);
-		line_data->shortest = ft_abs(line_data->w);
-		if (line_data->h < 0)
-			line_data->dy2 = -1;
-		else if (line_data->h > 0)
-			line_data->dy2 = 1;
-		line_data->dx2 = 0;
+		line->longest = ft_abs(line->h);
+		line->shortest = ft_abs(line->w);
+		if (line->h < 0)
+			line->dy2 = -1;
+		else if (line->h > 0)
+			line->dy2 = 1;
+		line->dx2 = 0;
 	}
 }
 
-void	asign_values(t_line *line_data)
+void	asign_values(t_line *line)
 {
-	initialize_line_struct(line_data);
-	decide_xy_direction(line_data);
+	initialize_line_struct(line);
+	decide_xy_direction(line);
 }
