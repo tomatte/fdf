@@ -22,7 +22,7 @@ SRC			=	./src/fdf.c \
 				./src/get_map/ft_atoi_mod.c \
 				./src/get_map/dot_functions.c \
 				./src/get_map/get_map_values.c \
-				./src/others/window_minimum_size.c \
+				./src/others/image_minimum_size.c \
 				./src/get_map/extract_color.c \
 				./src/draw_map/calculate_tile_size.c \
 

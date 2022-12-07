@@ -6,13 +6,13 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 17:58:09 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 22:17:02 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 09:52:56 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-void	window_minimum_size(t_img *img)
+void	image_minimum_size(t_img *img)
 {
 	int	columns;
 	int	lines;

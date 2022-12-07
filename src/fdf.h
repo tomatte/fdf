@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 23:45:57 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 09:57:17 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_map
 	int		lines;
 	int		tile_width;
 	int		tile_height;
+	int		depth_shift;
 }	t_map;
 
 typedef struct s_position
@@ -140,7 +141,7 @@ void	close_window_esc(t_img *img);
 int		key_hooks(int key_code, t_img *img);
 
 //image
-void	window_minimum_size(t_img *img);
+void	image_minimum_size(t_img *img);
 
 //ft_hextoi modified to walk with pointer
 int		ft_hextoi_mod(char **hex);

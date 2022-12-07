@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
-/*   Updated: 2022/12/06 22:02:53 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 09:56:36 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static t_img	new_image(char *map, char *title)
 	img.width = WINDOW_WIDTH;
 	img.height = WINDOW_HEIGHT;
 	img.dots = get_map_values(map);
-	window_minimum_size(&img);
+	image_minimum_size(&img);
 	img.mlx = mlx_init();
 	img.window = mlx_new_window(img.mlx, WINDOW_WIDTH, WINDOW_HEIGHT, title);
 	img.img = mlx_new_image(img.mlx, img.width, img.height);
