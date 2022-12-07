@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:50 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 17:02:05 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 20:23:19 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	draw_isometric_line(t_img *img, t_map *map, t_position position)
 {
 	t_line	line;
 
+	ft_memset(&line, 0, sizeof(line));
 	line.color = position.color;
 	if (line.color == DEFAULT_COLOR)
 		line.color = position.color2;

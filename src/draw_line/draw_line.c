@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:14:52 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 17:29:40 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:29:34 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	draw_line(t_img *img, t_line line)
 	i = 0;
 	while (i++ <= line.longest)
 	{
+		verify_pixel(img, &line);
 		my_mlx_pixel_put(img, line.x, line.y, line.color);
 		line.proportion += line.shortest;
 		walk_pixel(&line);

@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 00:14:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 10:40:40 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 22:27:22 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	get_highest_depth(t_dot *dots)
 {
-	int	highest_depth;
+	int		highest_depth;
 	t_dot	*aux;
 
 	highest_depth = dots->depth;
@@ -53,11 +53,13 @@ void	calculate_tile_size(t_img *img, t_map *map)
 	int	width;
 
 	width = 4;
-	while (width + 2 < 96)
+	while (1)
 	{
 		if (((width + 2) * map->columns) < img->width - 400
 			&& ((width + 2) / 2) * map->lines < img->width - 400)
+		{
 			width += 2;
+		}
 		else
 			break ;
 	}

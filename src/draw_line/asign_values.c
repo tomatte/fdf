@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:14:45 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 17:29:24 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 20:38:58 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 static void	initialize_line_struct(t_line *line)
 {
+	int	test;
+
 	line->w = line->x2 - line->x;
 	line->h = line->y2 - line->y;
-	line->dx1 = 0;
-	line->dy1 = 0;
-	line->dx2 = 0;
-	line->dy2 = 0;
-	line->proportion = 0;
 	line->longest = ft_abs(line->w);
-	line->shortest = ft_abs(line->h);
+	test = line->y2 - line->y;
+	line->shortest = ft_abs(test);
 }
 
 static void	decide_xy_direction(t_line *line)
