@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 12:59:06 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 22:03:23 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 23:10:11 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ static void	esc_close(int key_code, t_img *img)
 
 static void	move_img(int key_code, t_img *img)
 {
-	static int	x = 0;
-	static int	y = 0;
-	int			num;
+	static int		x = 0;
+	static int		y = 0;
+	int				num;
 
-	num = 30;
+	num = 25;
 	if (key_code == ARROW_UP)
 		y -= num;
 	else if (key_code == ARROW_LEFT)
@@ -38,6 +38,7 @@ static void	move_img(int key_code, t_img *img)
 		y += num;
 	else
 		return ;
+	mlx_clear_window(img->mlx, img->window);
 	mlx_put_image_to_window(img->mlx, img->window, img->img, x, y);
 }
 
