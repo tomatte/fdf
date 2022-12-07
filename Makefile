@@ -8,6 +8,7 @@ SRC			=	./src/fdf.c \
 				./src/others/error_exit.c \
 				./src/others/get_number.c \
 				./src/others/mem_clear.c \
+				./src/others/finish_program.c \
 				./src/draw_map/draw_map.c \
 				./src/draw_map/get_map_columns.c \
 				./src/draw_map/get_map_lines.c \

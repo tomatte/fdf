@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 22:17:46 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 23:45:57 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,4 +154,6 @@ t_dot	*get_map_values(char *map);
 void	next_line(t_dot **first, t_dot **current, t_dot **up, char **map);
 
 int		extract_color(char **map);
+
+void	finish_program(t_img *img);
 #endif

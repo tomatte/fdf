@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 12:59:06 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 23:10:11 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 23:47:23 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	esc_close(int key_code, t_img *img)
 	if (key_code == ESC_KEY)
 	{
 		ft_printf("Program closed.\n");
-		exit(0);
+		finish_program(img);
 	}
 }
 
