@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:16:36 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/05 23:15:46 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 16:59:47 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ static int	hex_validation(char **hex)
 int	ft_hextoi(char *hex)
 {
 	int	number;
-	int	len;
 	int	i;
 
 	if (!hex_validation(&hex))

@@ -35,7 +35,7 @@ NAME		=	fdf
 
 LIBFT		=	./libft/libftprintf.a
 
-CFLAGS		=	-L. -lXext -L. -lX11
+CFLAGS		=	-g3 -O3 -Imlx -Lmlx -lmlx -lXext -lX11 -lm -fPIE
 
 VPATH				=	./src/others \
 						./src/draw_line \

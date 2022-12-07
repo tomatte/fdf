@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 09:57:17 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 16:59:23 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int		get_map_columns(t_dot *dots);
 int		get_map_lines(t_dot *dots);
 void	draw_isometric_line(t_img *img, t_map *map, t_position position);
 void	put_isometric_pixel(t_img *img, int x, int y, t_map *map);
-int		get_depth(int depth, t_map *map, t_img *img);
+int		get_depth(int depth, t_map *map);
 void	calculate_tile_size(t_img *img, t_map *map);
 
 //pass the line and column as argument

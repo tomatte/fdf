@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:16:53 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/26 14:16:55 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:00:25 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,6 @@ static void	move_columns(char **text, int columns)
 
 int	get_hexa_from_text(char *text)
 {
-	int		number;
-	char	*hex;
-
 	move_spaces(&text);
 	if (*text == '-')
 		text++;

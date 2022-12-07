@@ -38,7 +38,7 @@ BONUS_OBJS	=	${BONUS_SRC:.c=.o}
 
 NAME		=	libft.a
 
-FLAGS		=	-Wall -Wextra -Werror
+FLAGS		=	-Wall -Wextra -Werror -fPIE
 
 RM			=	rm -f
 

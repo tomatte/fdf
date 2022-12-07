@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 14:17:00 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/11/26 14:17:06 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 16:57:29 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ static void	move_columns(char **text, int columns)
 
 int	get_number(int line, int column, char *text)
 {
-	int	number;
-
 	if (!text || line < 0 || column < 0)
 		return (0);
 	move_lines(&text, line);
