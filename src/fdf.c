@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
-/*   Updated: 2022/12/06 18:16:45 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 22:02:53 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static t_img	new_image(char *map, char *title)
 	t_img	img;
 
 	img.map = map;
-	img.proportion = TILE_HEIGHT >> 1;
 	img.width = WINDOW_WIDTH;
 	img.height = WINDOW_HEIGHT;
 	img.dots = get_map_values(map);

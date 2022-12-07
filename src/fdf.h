@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 18:16:30 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/06 22:17:46 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@
 # define MAX_FILE_SIZE 4096
 # define WINDOW_WIDTH 1366
 # define WINDOW_HEIGHT 768
-# define TILE_WIDTH 40
-# define TILE_HEIGHT 35
+# define DEPTH_SHIFT 1;
 # define ESC_KEY 65307
 # define MINUS_KEY 45
 # define PLUS_KEY 61
@@ -93,7 +92,6 @@ typedef struct s_img
 	void	*img;
 	char	*map;
 	t_dot	*dots;
-	int		proportion;
 	int		width;
 	int		height;
 	int		bpp;
