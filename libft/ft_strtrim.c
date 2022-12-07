@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 00:10:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/07/04 06:35:13 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 02:30:58 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	begin = (char *) s1;
 	if (!get_begin_position(&begin, s1, set))
-		return ft_strdup("");
+		return (ft_strdup(""));
 	end = (char *) &s1[ft_strlen(s1) - 1];
 	while (find_char(set, *end))
 		end--;

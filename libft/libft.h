@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:27:51 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/07/05 02:35:55 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 02:32:59 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,9 +119,9 @@ result examples:
 char	*ft_isnumber(char *str);
 
 //verify if character is a space 
-int ft_isspace(char c);
+int		ft_isspace(char c);
 
 //return 1 if char is - or +
-int	ft_issign(char c);
+int		ft_issign(char c);
 
 #endif

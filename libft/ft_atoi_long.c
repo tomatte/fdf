@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 05:54:21 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/10/27 18:15:10 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 02:31:45 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 long int	ft_atoi_long(const char *nptr)
 {
 	long int	num;
-	int	        sign;
+	int			sign;
 
 	sign = 1;
 	num = 0;
