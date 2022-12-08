@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 12:59:06 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/08 17:49:51 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/08 20:49:14 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ static void	move_img(int key_code, t_img *img)
 
 static void	change_depth(int key_code, t_img *img)
 {
-	static int	depth = 0;
+	static int	depth_shift = 0;
 
-	if (key_code == PLUS_KEY)
-		depth += 10;
-	else if (key_code == MINUS_KEY)
-		depth -= 10;
+	if (key_code == MINUS_KEY)
+		depth_shift++;
+	else if (key_code == PLUS_KEY && depth_shift > 0)
+		depth_shift--;
 	else
 		return ;
-	img->depth_mod = depth;
+	img->depth_shift = depth_shift;
 	mlx_destroy_image(img->mlx, img->img);
 	img->img = mlx_new_image(img->mlx, img->width, img->height);
 	draw_map(img);
