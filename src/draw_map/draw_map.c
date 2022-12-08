@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:25 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/06 22:18:46 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:10:20 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	draw_map(t_img *img)
 	t_line	line;
 	t_dot	*dots;
 
+	ft_memset(&map, 0, sizeof(map));
 	map = fill_map(img->dots);
 	calculate_tile_size(img, &map);
 	drawing(img, &map, img->dots);

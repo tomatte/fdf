@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 09:57:17 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/07 20:17:49 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 void	draw_line(t_img *img, t_line line_data);
 void	asign_values(t_line *line_data);
 t_line	line_coordinates(int x, int y, int x2, int y2);
+void	verify_pixel(t_img *img, t_line *line);
 
 // --- READ_MAP --- //
 char	*get_map(char *file_name);

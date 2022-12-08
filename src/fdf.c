@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
-/*   Updated: 2022/12/07 09:56:36 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/08 09:23:38 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ static void	argv_validation(int argc, char **argv)
 	if (argc < 2)
 	{
 		ft_printf("You need to pass a .fdf file as argument!\n");
+		exit(EXIT_FAILURE);
+	}
+	else if (argc > 2)
+	{
+		ft_printf("Only one argument is allowed!\n");
 		exit(EXIT_FAILURE);
 	}
 	file_name = argv[1];
