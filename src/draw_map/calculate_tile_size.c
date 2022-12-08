@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 00:14:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 22:27:22 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:14:50 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ static void	get_depth_shift(t_img *img, t_map *map)
 		map->depth_shift = 3;
 	else if (ft_abs(highest_depth) < 96)
 		map->depth_shift = 4;
+	else
+		map->depth_shift = 5;
 }
 
 void	calculate_tile_size(t_img *img, t_map *map)
