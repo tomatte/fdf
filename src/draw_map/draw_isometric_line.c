@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 14:51:50 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 20:23:19 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:03:17 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	draw_isometric_line(t_img *img, t_map *map, t_position position)
 	line.y = get_pixel_y(img, position.i, position.j, map);
 	line.x2 = get_pixel_x(img, position.i2, position.j2, map);
 	line.y2 = get_pixel_y(img, position.i2, position.j2, map);
-	line.y -= get_depth(position.depth, map);
-	line.y2 -= get_depth(position.depth2, map);
+	line.y -= get_depth(position.depth, map, img);
+	line.y2 -= get_depth(position.depth2, map, img);
 	draw_line(img, line);
 }

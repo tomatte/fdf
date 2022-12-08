@@ -6,31 +6,29 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:21:05 by max               #+#    #+#             */
-/*   Updated: 2022/12/07 17:36:41 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:41:28 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static t_img	new_image(char *map, char *title)
+static void	new_image(t_img *img, char *map, char *title)
 {
-	t_img	img;
-
-	img.map = map;
-	img.width = WINDOW_WIDTH;
-	img.height = WINDOW_HEIGHT;
-	img.dots = get_map_values(map);
-	image_minimum_size(&img);
-	img.mlx = mlx_init();
-	img.window = mlx_new_window(img.mlx, WINDOW_WIDTH, WINDOW_HEIGHT, title);
-	img.img = mlx_new_image(img.mlx, img.width, img.height);
-	img.addr = mlx_get_data_addr(
-			img.img,
-			&img.bpp,
-			&img.line_length,
-			&img.endian
+	ft_memset(img, 0, sizeof(t_img));
+	img->map = map;
+	img->width = WINDOW_WIDTH;
+	img->height = WINDOW_HEIGHT;
+	img->dots = get_map_values(map);
+	image_minimum_size(img);
+	img->mlx = mlx_init();
+	img->window = mlx_new_window(img->mlx, WINDOW_WIDTH, WINDOW_HEIGHT, title);
+	img->img = mlx_new_image(img->mlx, img->width, img->height);
+	img->addr = mlx_get_data_addr(
+			img->img,
+			&img->bpp,
+			&img->line_length,
+			&img->endian
 			);
-	return (img);
 }
 
 static void	argv_validation(int argc, char **argv)
@@ -71,7 +69,7 @@ int	main(int argc, char **argv)
 
 	argv_validation(argc, argv);
 	map = get_map(argv[1]);
-	img = new_image(map, "Isometrics");
+	new_image(&img, map, "Isometrics");
 	draw_map(&img);
 	start_hooks(&img);
 	mlx_put_image_to_window(img.mlx, img.window, img.img, 0, 0);

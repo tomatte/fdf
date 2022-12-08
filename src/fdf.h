@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/07 20:46:30 by dbrandao         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:43:54 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,9 @@ typedef struct s_img
 	void	*img;
 	char	*map;
 	t_dot	*dots;
+	int		depth_mod;
+	int		x;
+	int		y;
 	int		width;
 	int		height;
 	int		bpp;
@@ -121,7 +124,7 @@ int		get_map_columns(t_dot *dots);
 int		get_map_lines(t_dot *dots);
 void	draw_isometric_line(t_img *img, t_map *map, t_position position);
 void	put_isometric_pixel(t_img *img, int x, int y, t_map *map);
-int		get_depth(int depth, t_map *map);
+int		get_depth(int depth, t_map *map, t_img *img);
 void	calculate_tile_size(t_img *img, t_map *map);
 
 //pass the line and column as argument
