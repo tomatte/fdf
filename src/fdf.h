@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2022/12/08 17:43:54 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/01/22 20:26:50 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,8 @@ void	close_window_x(t_img *img);
 void	move_image(t_img *img);
 void	close_window_esc(t_img *img);
 int		key_hooks(int key_code, t_img *img);
+void	change_depth(int key_code, t_img *img);
+void	apply_changes(t_img *img);
 
 //image
 void	image_minimum_size(t_img *img);

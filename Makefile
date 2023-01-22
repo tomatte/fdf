@@ -25,6 +25,9 @@ SRC			=	my_mlx_pixel_put.c \
 				extract_color.c \
 				calculate_tile_size.c \
 				verify_pixel.c \
+				change_depth.c \
+				apply_changes.c \
+
 
 
 H_SRC		=	./src/fdf.h ./libft/libftprintf.h
@@ -37,6 +40,7 @@ NAME		=	fdf
 LIBFT		=	./libft/libftprintf.a
 
 CFLAGS		=	-g3 -O3 -Imlx -Lmlx -lmlx -lXext -lX11 -lm -fPIE
+CFLAGS		=	./minilibx-linux/libmlx_Linux.a -L. -lXext -L. -lX11
 
 VPATH				=	./src/others \
 						./src/draw_line \
