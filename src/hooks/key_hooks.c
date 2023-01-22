@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 12:59:06 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/01/22 20:24:29 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/01/22 20:30:41 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,23 @@ static void	move_img(int key_code, t_img *img)
 	img->x = x;
 	img->y = y;
 	mlx_put_image_to_window(img->mlx, img->window, img->img, x, y);
+}
+
+static void	change_depth(int key_code, t_img *img)
+{
+	static int	depth = 0;
+
+	if (key_code == PLUS_KEY)
+		depth += 10;
+	else if (key_code == MINUS_KEY)
+		depth -= 10;
+	else
+		return ;
+	img->depth_mod = depth;
+	mlx_destroy_image(img->mlx, img->img);
+	img->img = mlx_new_image(img->mlx, img->width, img->height);
+	draw_map(img);
+	mlx_put_image_to_window(img->mlx, img->window, img->img, img->x, img->y);
 }
 
 int	key_hooks(int key_code, t_img *img)

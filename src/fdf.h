@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:45:58 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/01/22 20:26:50 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/01/22 20:30:33 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # define RED 0x00FF0000
 # define DEFAULT_COLOR 0x000000FF
 # define MAX_FILE_SIZE 4096
-# define WINDOW_WIDTH 1366
-# define WINDOW_HEIGHT 768
+# define WINDOW_WIDTH 1120
+# define WINDOW_HEIGHT 720
 # define DEPTH_SHIFT 1;
 # define ESC_KEY 65307
 # define MINUS_KEY 45
@@ -93,7 +93,7 @@ typedef struct s_img
 	void	*img;
 	char	*map;
 	t_dot	*dots;
-	int		depth_mod;
+	int		depth_shift;
 	int		x;
 	int		y;
 	int		width;
